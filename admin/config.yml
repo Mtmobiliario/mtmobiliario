@@ -2,23 +2,27 @@ backend:
   name: git-gateway
   branch: main
 
-# Pasta onde as fotos enviadas pelo cliente serão guardadas
 media_folder: "assets/fotos"
 public_folder: "assets/fotos"
 
 collections:
-  - name: "catalogo"
-    label: "Catálogo de Móveis"
+  - name: "portfolio"
+    label: "Portfólio de Obras"
     files:
-      - label: "Lista de Produtos"
-        name: "moveis"
-        file: "moveis.json"
+      - label: "Trabalhos Realizados"
+        name: "projetos"
+        file: "portfolio.json"
         fields:
-          - label: "Móveis"
+          - label: "Projetos"
             name: "items"
             widget: "list"
             fields:
-              - { label: "Nome do Móvel", name: "nome", widget: "string" }
-              - { label: "Preço (€)", name: "preco", widget: "number", value_type: "float" }
-              - { label: "Fotografia", name: "foto", widget: "image" }
-              - { label: "Descrição", name: "descricao", widget: "text" }
+              - { label: "Título do Projeto", name: "titulo", widget: "string" }
+              - label: "Categoria"
+                name: "categoria"
+                widget: "select"
+                options: ["Cozinhas", "Quartos & Closets", "Salas de Estar", "Casas de Banho", "Espaços Comerciais", "Mobiliário Avulso"]
+                default: "Cozinhas"
+              - { label: "Localização (ex: Matosinhos)", name: "local", widget: "string", required: false }
+              - { label: "Fotografia da Obra", name: "foto", widget: "image" }
+              - { label: "Descrição dos Materiais / Detalhes", name: "descricao", widget: "text", required: false }
