@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio de Obras | MT Mobiliário</title>
+  <title>Portfólio | MT Mobiliário | Furniture</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -21,55 +21,166 @@
       --wood-light: #F4ECE1;
       --border: #E7E2DA;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: var(--bg-warm); color: var(--primary); font-family: 'Plus Jakarta Sans', sans-serif; }
-    h1, h2, h3 { font-family: 'Cinzel', serif; }
+    body {
+      background-color: var(--bg-warm);
+      color: var(--primary);
+      font-family: 'Outfit', -apple-system, sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      letter-spacing: 0.015em;
+    }
 
-    header { background: rgba(250, 248, 245, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-    .nav-wrap { max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; }
-    .logo { font-size: 1.35rem; font-weight: 700; color: var(--primary); text-decoration: none; font-family: 'Cinzel', serif; }
-    .logo span { color: var(--wood-warm); }
+    h1, h2, h3, .logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    header {
+      background: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.3rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo span { color: var(--wood-warm); font-weight: 300; }
+
     .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-    .nav-links a { text-decoration: none; color: var(--secondary); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--secondary);
+      font-size: 0.88rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
     .nav-links a:hover, .nav-links a.active { color: var(--wood-warm); }
-    .btn-nav-orcamento { background: var(--wood-warm); color: white !important; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: 600; }
 
-    .page-header { background: var(--primary); color: white; padding: 4rem 2rem; text-align: center; }
-    .page-header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
-    .page-header p { color: #D6D3D1; font-size: 1.1rem; }
+    .btn-nav-orcamento {
+      background: var(--wood-warm);
+      color: white !important;
+      padding: 0.65rem 1.3rem;
+      border-radius: 2px;
+      font-size: 0.8rem !important;
+      letter-spacing: 0.08em !important;
+      transition: background 0.2s !important;
+    }
 
-    .portfolio-section { max-width: 1240px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+    .page-header { background: var(--primary); color: white; padding: 4.5rem 2rem; text-align: center; }
+    .page-header h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 0.4rem; font-weight: 300; }
+    .page-header p { color: #D6D3D1; font-size: 1.05rem; font-weight: 300; }
+
+    .portfolio-section { max-width: 1240px; margin: 0 auto; padding: 4.5rem 2rem 6.5rem; }
     .category-tabs { display: flex; justify-content: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
-    .tab-btn { background: white; border: 1px solid var(--border); color: var(--secondary); padding: 0.6rem 1.4rem; border-radius: 40px; font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+    .tab-btn {
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--secondary);
+      padding: 0.55rem 1.4rem;
+      border-radius: 40px;
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
     .tab-btn:hover, .tab-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
 
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2.2rem; }
-    .card { background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; }
+    .card {
+      background: var(--card-bg);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+    }
+
     .card-img-wrap { width: 100%; height: 280px; position: relative; overflow: hidden; background: #E7E2DA; }
     .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-    .card-badge { position: absolute; top: 16px; left: 16px; background: rgba(28, 25, 23, 0.85); color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.72rem; text-transform: uppercase; font-weight: 600; }
-    
+    .card-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(28, 25, 23, 0.85);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 2px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 400;
+    }
+
     .card-info { padding: 1.8rem; display: flex; flex-direction: column; flex-grow: 1; }
-    .card-place { font-size: 0.82rem; color: var(--wood-warm); font-weight: 600; text-transform: uppercase; margin-bottom: 0.4rem; }
-    .card-title { font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--primary); }
-    .card-desc { font-size: 0.92rem; color: var(--muted); margin-bottom: 1.8rem; line-height: 1.6; flex-grow: 1; }
-    
-    .btn-quote { display: flex; align-items: center; justify-content: center; width: 100%; padding: 0.85rem 1rem; border-radius: 4px; background: var(--wood-light); color: var(--wood-warm); border: 1px solid rgba(160, 98, 53, 0.2); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: all 0.2s; }
+    .card-place { font-size: 0.78rem; color: var(--wood-warm); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+    .card-title { font-size: 1.45rem; font-weight: 400; margin-bottom: 0.8rem; color: var(--primary); }
+    .card-desc { font-size: 0.92rem; font-weight: 300; color: var(--muted); margin-bottom: 1.8rem; line-height: 1.6; flex-grow: 1; }
+
+    .btn-quote {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 2px;
+      background: var(--wood-light);
+      color: var(--wood-warm);
+      border: 1px solid rgba(160, 98, 53, 0.2);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+
     .btn-quote:hover { background: var(--wood-warm); color: white; }
 
-    footer { background: var(--primary); color: #D6D3D1; padding: 4rem 2rem 2rem; }
+    footer { background: var(--primary); color: #D6D3D1; padding: 4.5rem 2rem 2.5rem; }
     .footer-wrap { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; border-bottom: 1px solid #292524; padding-bottom: 3rem; }
-    .footer-col h3 { color: white; font-size: 1.1rem; margin-bottom: 1.2rem; }
-    .footer-col p, .footer-col a { color: #A8A29E; font-size: 0.92rem; text-decoration: none; line-height: 1.8; display: block; }
-    .copyright { text-align: center; padding-top: 2rem; font-size: 0.85rem; color: #78716C; }
-    @media (max-width: 768px) { .nav-links { display: none; } }
+    .footer-col h3 { color: white; font-size: 1.25rem; font-weight: 400; margin-bottom: 1.2rem; }
+    .footer-col p, .footer-col a { color: #A8A29E; font-size: 0.92rem; font-weight: 300; text-decoration: none; line-height: 1.8; display: block; }
+    .footer-col a:hover { color: var(--wood-soft); }
+    .copyright { text-align: center; padding-top: 2rem; font-size: 0.82rem; color: #78716C; font-weight: 300; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .footer-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="nav-wrap">
-      <a href="index.html" class="logo">MT <span>MOBILIÁRIO</span></a>
+      <a href="index.html" class="logo">MT <span>MOBILIÁRIO</span> | Furniture</a>
       <ul class="nav-links">
         <li><a href="index.html">Início</a></li>
         <li><a href="portfolio.html" class="active">Portfólio</a></li>
@@ -82,7 +193,7 @@
 
   <div class="page-header">
     <h1>O Nosso Portfólio</h1>
-    <p>Galeria de trabalhos executados por medida</p>
+    <p>Galeria de obras e projetos personalizados</p>
   </div>
 
   <section class="portfolio-section">
@@ -98,8 +209,8 @@
   <footer>
     <div class="footer-wrap">
       <div class="footer-col">
-        <h3>MT Mobiliário</h3>
-        <p>Carpintaria contemporânea e marcenaria por medida.</p>
+        <h3>MT Mobiliário | Furniture</h3>
+        <p>Carpintaria contemporânea, marcenaria de autor e soluções integradas por medida.</p>
       </div>
       <div class="footer-col">
         <h3>Menu</h3>
@@ -114,7 +225,7 @@
         <p>Email: atelier@mtmobiliario.pt</p>
       </div>
     </div>
-    <div class="copyright">&copy; 2026 MT Mobiliário. Todos os direitos reservados.</div>
+    <div class="copyright">&copy; 2026 MT Mobiliário | Furniture. Todos os direitos reservados.</div>
   </footer>
 
   <script>
