@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Mobiliário</title>
+  <!-- Script para ler o login da Netlify caso aceda à raiz -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { margin: 0; padding: 2rem; background: #f8fafc; color: #1e293b; }
+    header { text-align: center; margin-bottom: 3rem; }
+    h1 { margin-bottom: 0.5rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+    .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+    .card img { width: 100%; height: 220px; object-fit: cover; background: #e2e8f0; }
+    .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+    .card-title { font-size: 1.25rem; font-weight: 600; margin: 0 0 0.5rem 0; }
+    .card-price { color: #0f766e; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .card-desc { font-size: 0.95rem; color: #64748b; line-height: 1.4; margin-bottom: 1.5rem; }
+    .btn-admin { position: fixed; bottom: 20px; right: 20px; background: #0f172a; color: white; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Catálogo de Mobiliário</h1>
+    <p>Peças e Mobiliário Exclusivo</p>
+  </header>
+
+  <div class="grid" id="produtos-container">
+    <p style="text-align: center; grid-column: 1 / -1;">A carregar catálogo...</p>
+  </div>
+
+  <a href="./admin/" class="btn-admin">Área de Edição</a>
+
+  <script>
+    fetch('./moveis.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('produtos-container');
+        container.innerHTML = '';
+        
+        if (!data || data.length === 0) {
+          container.innerHTML = '<p style="text-align: center; grid-column: 1/-1;">Nenhum produto cadastrado ainda.</p>';
+          return;
+        }
+
+        data.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `
+            <img src="${item.foto || 'https://via.placeholder.com/300x200?text=Sem+Foto'}" alt="${item.nome}">
+            <div class="card-content">
+              <h2 class="card-title">${item.nome}</h2>
+              <div class="card-price">${item.preco ? item.preco + ' €' : ''}</div>
+              <p class="card-desc">${item.descricao || ''}</p>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(() => {
+        document.getElementById('produtos-container').innerHTML = 
+          '<p style="text-align: center; grid-column: 1/-1;">Ainda não existem produtos adicionados.</p>';
+      });
+  </script>
+</body>
+</html>
