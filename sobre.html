@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós | MT Mobiliário</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-warm: #FAF8F5;
+      --card-bg: #FFFFFF;
+      --primary: #1C1917;
+      --secondary: #44403C;
+      --muted: #78716C;
+      --wood-warm: #A06235;
+      --wood-light: #F4ECE1;
+      --border: #E7E2DA;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--primary); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.7; }
+    h1, h2, h3 { font-family: 'Cinzel', serif; }
+
+    header { background: rgba(250, 248, 245, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav-wrap { max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; }
+    .logo { font-size: 1.35rem; font-weight: 700; color: var(--primary); text-decoration: none; font-family: 'Cinzel', serif; }
+    .logo span { color: var(--wood-warm); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--secondary); font-size: 0.95rem; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--wood-warm); }
+    .btn-nav-orcamento { background: var(--wood-warm); color: white !important; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: 600; }
+
+    .page-header { background: var(--primary); color: white; padding: 4rem 2rem; text-align: center; }
+    .page-header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+
+    .content-wrap { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 5rem; }
+    .about-grid img { width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
+    .about-text h2 { font-size: 2rem; margin-bottom: 1.2rem; }
+    .about-text p { color: var(--muted); margin-bottom: 1.2rem; }
+
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .value-box { background: white; padding: 2.5rem; border-radius: 8px; border: 1px solid var(--border); }
+    .value-box h3 { font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--wood-warm); }
+    .value-box p { color: var(--muted); font-size: 0.95rem; }
+
+    footer { background: var(--primary); color: #D6D3D1; padding: 4rem 2rem 2rem; }
+    .footer-wrap { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; border-bottom: 1px solid #292524; padding-bottom: 3rem; }
+    .footer-col h3 { color: white; font-size: 1.1rem; margin-bottom: 1.2rem; }
+    .footer-col p, .footer-col a { color: #A8A29E; font-size: 0.92rem; text-decoration: none; line-height: 1.8; display: block; }
+    .copyright { text-align: center; padding-top: 2rem; font-size: 0.85rem; color: #78716C; }
+    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-wrap">
+      <a href="index.html" class="logo">MT <span>MOBILIÁRIO</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="sobre.html" class="active">Sobre Nós</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="orcamento.html" class="btn-nav-orcamento">Pedir Orçamento</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <h1>O Nosso Atelier</h1>
+    <p>A tradição da marcenaria aliada ao rigor construtivo</p>
+  </div>
+
+  <div class="content-wrap">
+    <div class="about-grid">
+      <img src="https://images.unsplash.com/photo-1540518614846-7ede433c4ef4?auto=format&fit=crop&w=900&q=80" alt="Marceneiro a trabalhar">
+      <div class="about-text">
+        <h2>Paixão Pela Madeira & Pelo Detalhe</h2>
+        <p>A MT Mobiliário nasceu da vontade de oferecer soluções em mobiliário que unem funcionalidade pura a uma estética intemporal.</p>
+        <p>Não produzimos em massa: cada projeto é estudado tendo em conta a arquitetura da casa, a iluminação natural e a rotina diária de quem nela habita.</p>
+        <p>Utilizamos ferragens com amortecimento de alta durabilidade, folheados naturais, termolaminados contemporâneos e madeiras maciças com acabamentos amigos do ambiente.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <h2>Os Nossos Pilares de Trabalho</h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-box">
+        <h3>1. Projeto e Estudo 3D</h3>
+        <p>Validamos dimensões, cores e ergonomia antes de cortar a primeira placa de madeira, garantindo que o resultado final é exato.</p>
+      </div>
+      <div class="value-box">
+        <h3>2. Fabrico em Oficina Própria</h3>
+        <p>Controlamos 100% da produção com artesãos qualificados, garantindo cortes precisos e fitamentos perfeitos.</p>
+      </div>
+      <div class="value-box">
+        <h3>3. Instalação Criteriosa</h3>
+        <p>A montagem é efetuada pela nossa própria equipa, assegurando encaixes milimétricos e acabamento impecável no local.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-col">
+        <h3>MT Mobiliário</h3>
+        <p>Mobiliário por medida, cozinhas e carpintaria de autor.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Menu</h3>
+        <a href="index.html">Início</a>
+        <a href="portfolio.html">Portfólio</a>
+        <a href="contactos.html">Contactos</a>
+        <a href="orcamento.html">Pedir Orçamento</a>
+      </div>
+      <div class="footer-col">
+        <h3>Atelier</h3>
+        <p>Porto, Portugal</p>
+        <p>Email: atelier@mtmobiliario.pt</p>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 MT Mobiliário. Todos os direitos reservados.</div>
+  </footer>
+
+</body>
+</html>
