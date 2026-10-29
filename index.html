@@ -407,20 +407,15 @@ function mudarParaSlide(novoIndice) {
   const slideSaindo = slides[indiceAtual];
   const slideEntrando = slides[novoIndice];
 
-  // Remove estados e prepara posições
   slides.forEach((s, idx) => {
     if (idx !== indiceAtual && idx !== novoIndice) {
-      s.className = 'slide';
-      s.removeAttribute('style');
-      // Mantém apenas a imagem de fundo definida originalmente
+      s.classList.remove('active', 'exit-right');
     }
   });
 
-  // O slide que sai desliza para a direita
   slideSaindo.classList.remove('active');
   slideSaindo.classList.add('exit-right');
 
-  // O slide que entra surge da esquerda
   slideEntrando.classList.remove('exit-right');
   slideEntrando.classList.add('active');
 
