@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre Nós | MT Mobiliário</title>
+  <title>Sobre Nós | MT Mobiliário | Furniture</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -17,49 +17,112 @@
       --secondary: #44403C;
       --muted: #78716C;
       --wood-warm: #A06235;
+      --wood-soft: #C89567;
       --wood-light: #F4ECE1;
       --border: #E7E2DA;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: var(--bg-warm); color: var(--primary); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.7; }
-    h1, h2, h3 { font-family: 'Cinzel', serif; }
+    body {
+      background-color: var(--bg-warm);
+      color: var(--primary);
+      font-family: 'Outfit', -apple-system, sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      letter-spacing: 0.015em;
+    }
 
-    header { background: rgba(250, 248, 245, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-    .nav-wrap { max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; }
-    .logo { font-size: 1.35rem; font-weight: 700; color: var(--primary); text-decoration: none; font-family: 'Cinzel', serif; }
-    .logo span { color: var(--wood-warm); }
+    h1, h2, h3, .logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    header {
+      background: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.3rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo span { color: var(--wood-warm); font-weight: 300; }
+
     .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-    .nav-links a { text-decoration: none; color: var(--secondary); font-size: 0.95rem; font-weight: 500; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--secondary);
+      font-size: 0.88rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
     .nav-links a:hover, .nav-links a.active { color: var(--wood-warm); }
-    .btn-nav-orcamento { background: var(--wood-warm); color: white !important; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: 600; }
 
-    .page-header { background: var(--primary); color: white; padding: 4rem 2rem; text-align: center; }
-    .page-header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+    .btn-nav-orcamento {
+      background: var(--wood-warm);
+      color: white !important;
+      padding: 0.65rem 1.3rem;
+      border-radius: 2px;
+      font-size: 0.8rem !important;
+      letter-spacing: 0.08em !important;
+    }
 
-    .content-wrap { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 5rem; }
-    .about-grid img { width: 100%; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
-    .about-text h2 { font-size: 2rem; margin-bottom: 1.2rem; }
-    .about-text p { color: var(--muted); margin-bottom: 1.2rem; }
+    .page-header { background: var(--primary); color: white; padding: 4.5rem 2rem; text-align: center; }
+    .page-header h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 0.4rem; font-weight: 300; }
+    .page-header p { color: #D6D3D1; font-size: 1.05rem; font-weight: 300; }
 
-    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
-    .value-box { background: white; padding: 2.5rem; border-radius: 8px; border: 1px solid var(--border); }
-    .value-box h3 { font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--wood-warm); }
-    .value-box p { color: var(--muted); font-size: 0.95rem; }
+    .content-wrap { max-width: 1100px; margin: 0 auto; padding: 5.5rem 2rem; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; margin-bottom: 5.5rem; }
+    .about-grid img { width: 100%; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+    .about-text h2 { font-size: 2.2rem; margin-bottom: 1.2rem; font-weight: 300; }
+    .about-text p { color: var(--muted); margin-bottom: 1.2rem; font-weight: 300; }
 
-    footer { background: var(--primary); color: #D6D3D1; padding: 4rem 2rem 2rem; }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3.5rem; }
+    .value-box { background: white; padding: 2.5rem; border-radius: 4px; border: 1px solid var(--border); }
+    .value-box h3 { font-size: 1.4rem; font-weight: 400; margin-bottom: 0.8rem; color: var(--wood-warm); }
+    .value-box p { color: var(--muted); font-size: 0.95rem; font-weight: 300; }
+
+    footer { background: var(--primary); color: #D6D3D1; padding: 4.5rem 2rem 2.5rem; }
     .footer-wrap { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; border-bottom: 1px solid #292524; padding-bottom: 3rem; }
-    .footer-col h3 { color: white; font-size: 1.1rem; margin-bottom: 1.2rem; }
-    .footer-col p, .footer-col a { color: #A8A29E; font-size: 0.92rem; text-decoration: none; line-height: 1.8; display: block; }
-    .copyright { text-align: center; padding-top: 2rem; font-size: 0.85rem; color: #78716C; }
-    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
+    .footer-col h3 { color: white; font-size: 1.25rem; font-weight: 400; margin-bottom: 1.2rem; }
+    .footer-col p, .footer-col a { color: #A8A29E; font-size: 0.92rem; font-weight: 300; text-decoration: none; line-height: 1.8; display: block; }
+    .footer-col a:hover { color: var(--wood-soft); }
+    .copyright { text-align: center; padding-top: 2rem; font-size: 0.82rem; color: #78716C; font-weight: 300; }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .footer-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="nav-wrap">
-      <a href="index.html" class="logo">MT <span>MOBILIÁRIO</span></a>
+      <a href="index.html" class="logo">MT <span>MOBILIÁRIO</span> | Furniture</a>
       <ul class="nav-links">
         <li><a href="index.html">Início</a></li>
         <li><a href="portfolio.html">Portfólio</a></li>
@@ -72,36 +135,36 @@
 
   <div class="page-header">
     <h1>O Nosso Atelier</h1>
-    <p>A tradição da marcenaria aliada ao rigor construtivo</p>
+    <p>A nobreza da madeira aliada à precisão milimétrica</p>
   </div>
 
   <div class="content-wrap">
     <div class="about-grid">
-      <img src="https://images.unsplash.com/photo-1540518614846-7ede433c4ef4?auto=format&fit=crop&w=900&q=80" alt="Marceneiro a trabalhar">
+      <img src="https://images.unsplash.com/photo-1540518614846-7ede433c4ef4?auto=format&fit=crop&w=900&q=80" alt="Marcenaria artesanal">
       <div class="about-text">
-        <h2>Paixão Pela Madeira & Pelo Detalhe</h2>
-        <p>A MT Mobiliário nasceu da vontade de oferecer soluções em mobiliário que unem funcionalidade pura a uma estética intemporal.</p>
-        <p>Não produzimos em massa: cada projeto é estudado tendo em conta a arquitetura da casa, a iluminação natural e a rotina diária de quem nela habita.</p>
-        <p>Utilizamos ferragens com amortecimento de alta durabilidade, folheados naturais, termolaminados contemporâneos e madeiras maciças com acabamentos amigos do ambiente.</p>
+        <h2>Paixão Pelo Detalhe & Rigor de Fabrico</h2>
+        <p>A MT Mobiliário | Furniture desenvolve projetos exclusivos que harmonizam funcionalidade e uma estética pura e intemporal.</p>
+        <p>Cada obra é desenhada para respeitar a arquitetura do espaço, valorizando materiais nobres como carvalhos, nogueiras, termolaminados estruturados e sistemas de ferragens europeias de última geração.</p>
+        <p>Garantimos um acompanhamento integral: desde a consultoria inicial e planeamento 3D até à montagem rigorosa no local.</p>
       </div>
     </div>
 
-    <div style="text-align: center; margin-top: 2rem;">
-      <h2>Os Nossos Pilares de Trabalho</h2>
+    <div style="text-align: center;">
+      <h2 style="font-size: 2.4rem; font-weight: 300;">O Nosso Compromisso</h2>
     </div>
 
     <div class="values-grid">
       <div class="value-box">
-        <h3>1. Projeto e Estudo 3D</h3>
-        <p>Validamos dimensões, cores e ergonomia antes de cortar a primeira placa de madeira, garantindo que o resultado final é exato.</p>
+        <h3>1. Projeto Exclusivo</h3>
+        <p>Estudamos as medidas e volumetrias de cada ambiente para que o mobiliário se integre de forma natural e funcional.</p>
       </div>
       <div class="value-box">
         <h3>2. Fabrico em Oficina Própria</h3>
-        <p>Controlamos 100% da produção com artesãos qualificados, garantindo cortes precisos e fitamentos perfeitos.</p>
+        <p>Total controlo da produção com cortes exatos, calibração de topo e fitamentos minuciosos.</p>
       </div>
       <div class="value-box">
         <h3>3. Instalação Criteriosa</h3>
-        <p>A montagem é efetuada pela nossa própria equipa, assegurando encaixes milimétricos e acabamento impecável no local.</p>
+        <p>A montagem é executada pela nossa própria equipa técnica, com especial cuidado pelos acabamentos finais.</p>
       </div>
     </div>
   </div>
@@ -109,8 +172,8 @@
   <footer>
     <div class="footer-wrap">
       <div class="footer-col">
-        <h3>MT Mobiliário</h3>
-        <p>Mobiliário por medida, cozinhas e carpintaria de autor.</p>
+        <h3>MT Mobiliário | Furniture</h3>
+        <p>Carpintaria contemporânea, marcenaria de autor e soluções integradas por medida.</p>
       </div>
       <div class="footer-col">
         <h3>Menu</h3>
@@ -125,7 +188,7 @@
         <p>Email: atelier@mtmobiliario.pt</p>
       </div>
     </div>
-    <div class="copyright">&copy; 2026 MT Mobiliário. Todos os direitos reservados.</div>
+    <div class="copyright">&copy; 2026 MT Mobiliário | Furniture. Todos os direitos reservados.</div>
   </footer>
 
 </body>
