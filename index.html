@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <style>
     :root {
@@ -104,6 +103,7 @@
       color: white;
       padding: 5rem 1.5rem;
       overflow: hidden;
+      background-color: var(--primary);
     }
 
     .hero-slider {
@@ -123,6 +123,7 @@
       height: 100%;
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       transform: translateX(-100%);
       opacity: 0;
       transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s ease;
@@ -146,7 +147,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(28, 25, 23, 0.65);
+      background: rgba(28, 25, 23, 0.62);
       z-index: 3;
     }
 
@@ -158,7 +159,7 @@
 
     .hero-tag {
       display: inline-block;
-      background: rgba(200, 149, 103, 0.2);
+      background: rgba(200, 149, 103, 0.25);
       border: 1px solid var(--wood-soft);
       color: #F5EBE1;
       padding: 5px 16px;
@@ -171,15 +172,15 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-size: clamp(2.1rem, 4.8vw, 3.8rem);
       font-weight: 300;
-      line-height: 1.15;
+      line-height: 1.18;
       margin-bottom: 1.2rem;
       letter-spacing: 0.02em;
     }
 
     .hero p {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       color: #E7E5E4;
       max-width: 660px;
       margin: 0 auto 2.5rem;
@@ -206,7 +207,7 @@
     .btn-secondary {
       background: transparent;
       color: white;
-      border: 1px solid rgba(255,255,255,0.4);
+      border: 1px solid rgba(255,255,255,0.45);
       text-decoration: none;
       padding: 0.95rem 2.2rem;
       border-radius: 2px;
@@ -302,24 +303,24 @@
 
   <header>
     <div class="nav-wrap">
-      <a href="index.html" class="logo">MT <span>MOBILIÁRIO</span> | Furniture</a>
+      <a href="./index.html" class="logo">MT <span>MOBILIÁRIO</span> | Furniture</a>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Início</a></li>
-        <li><a href="portfolio.html">Portfólio</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="contactos.html">Contactos</a></li>
-        <li><a href="orcamento.html" class="btn-nav-orcamento">Pedir Orçamento</a></li>
+        <li><a href="./index.html" class="active">Início</a></li>
+        <li><a href="./portfolio.html">Portfólio</a></li>
+        <li><a href="./sobre.html">Sobre Nós</a></li>
+        <li><a href="./contactos.html">Contactos</a></li>
+        <li><a href="./orcamento.html" class="btn-nav-orcamento">Pedir Orçamento</a></li>
       </ul>
     </div>
   </header>
 
   <section class="hero">
     <div class="hero-slider" id="hero-slider">
-      <div class="slide active" style="background-image: url('assets/fotos/1.jpg');"></div>
-      <div class="slide" style="background-image: url('assets/fotos/03.jpg');"></div>
-      <div class="slide" style="background-image: url('assets/fotos/04.jpg');"></div>
-      <div class="slide" style="background-image: url('assets/fotos/05.jpg');"></div>
-      <div class="slide" style="background-image: url('assets/fotos/07.jpg');"></div>
+      <div class="slide active" style="background-image: url('./assets/fotos/1.jpg');"></div>
+      <div class="slide" style="background-image: url('./assets/fotos/03.jpg');"></div>
+      <div class="slide" style="background-image: url('./assets/fotos/04.jpg');"></div>
+      <div class="slide" style="background-image: url('./assets/fotos/05.jpg');"></div>
+      <div class="slide" style="background-image: url('./assets/fotos/07.jpg');"></div>
     </div>
 
     <div class="hero-overlay"></div>
@@ -329,8 +330,8 @@
       <h1>SOLUÇÕES ÚNICAS PARA ESPAÇOS ÚNICOS</h1>
       <p>Do projeto à instalação, transformamos ideias em realidade, sempre com atenção ao detalhe e às necessidades de cada cliente.</p>
       <div class="hero-btns">
-        <a href="portfolio.html" class="btn-primary">Ver Portfólio</a>
-        <a href="orcamento.html" class="btn-secondary">Pedir Orçamento</a>
+        <a href="./portfolio.html" class="btn-primary">Ver Portfólio</a>
+        <a href="./orcamento.html" class="btn-secondary">Pedir Orçamento</a>
       </div>
     </div>
 
@@ -351,7 +352,7 @@
   <section class="cta-banner">
     <h2>Idealizou um espaço exclusivo?</h2>
     <p>Executamos projetos residenciais e corporativos adaptados com precisão às suas necessidades.</p>
-    <a href="orcamento.html" class="btn-primary">Solicitar Orçamento Gratuito</a>
+    <a href="./orcamento.html" class="btn-primary">Solicitar Orçamento Gratuito</a>
   </section>
 
   <footer>
@@ -362,10 +363,10 @@
       </div>
       <div class="footer-col">
         <h3>Menu</h3>
-        <a href="portfolio.html">Portfólio de Projetos</a>
-        <a href="sobre.html">Sobre o Atelier</a>
-        <a href="contactos.html">Contactos Diretos</a>
-        <a href="orcamento.html">Pedir Orçamento</a>
+        <a href="./portfolio.html">Portfólio de Projetos</a>
+        <a href="./sobre.html">Sobre o Atelier</a>
+        <a href="./contactos.html">Contactos Diretos</a>
+        <a href="./orcamento.html">Pedir Orçamento</a>
       </div>
       <div class="footer-col">
         <h3>Atelier</h3>
@@ -435,7 +436,7 @@
       setInterval(proximoSlide, duracaoSlide);
     }
 
-    // Carregar Obras em Destaque do portfolio.json
+    // Carregar Obras em Destaque
     fetch('./portfolio.json')
       .then(res => res.json())
       .then(data => {
@@ -444,15 +445,19 @@
         container.innerHTML = '';
 
         itens.forEach(item => {
+          let fotoUrl = item.foto || 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80';
+          if (fotoUrl.startsWith('/')) {
+            fotoUrl = '.' + fotoUrl;
+          }
           const card = document.createElement('div');
           card.className = 'card-preview';
           card.innerHTML = `
-            <img src="${item.foto || 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80'}" alt="${item.titulo}">
+            <img src="${fotoUrl}" alt="${item.titulo}">
             <div class="card-preview-body">
               <small>${item.categoria || 'Móvel'}</small>
               <h3>${item.titulo}</h3>
               <p>${item.descricao ? item.descricao.substring(0, 105) + '...' : ''}</p>
-              <a href="portfolio.html">Explorar Obra &rarr;</a>
+              <a href="./portfolio.html">Explorar Obra &rarr;</a>
             </div>
           `;
           container.appendChild(card);
@@ -461,17 +466,6 @@
       .catch(() => {
         document.getElementById('destaques-container').innerHTML = '';
       });
-
-    // Netlify Identity
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
   </script>
 </body>
 </html>
