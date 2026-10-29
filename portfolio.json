@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "titulo": "Cozinha Minimalista com Ilha em Carvalho",
+      "categoria": "Cozinhas",
+      "local": "Porto",
+      "foto": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=80",
+      "descricao": "Execução em termolaminado mate anti-dedadas, ilha central com bancada em quartzo e gavetões ocultos."
+    },
+    {
+      "titulo": "Roupeiro Embutido com Painel Ripado",
+      "categoria": "Quartos & Closets",
+      "local": "Matosinhos",
+      "foto": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80",
+      "descricao": "Portas de correr com vidro bronze reflexivo, iluminação LED integrada e interiores em linho cancelado."
+    },
+    {
+      "titulo": "Móvel Suspenso com Painel em Carvalho",
+      "categoria": "Salas de Estar",
+      "local": "Vila Nova de Gaia",
+      "foto": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+      "descricao": "Painel de TV integral em madeira natural com iluminação indireta e nichos lacados."
+    }
+  ]
+}
