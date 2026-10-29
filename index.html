@@ -180,4 +180,153 @@
     .card-preview-body small { color: var(--wood-warm); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.08em; font-weight: 500; display: block; margin-bottom: 0.4rem; }
     .card-preview-body h3 { font-size: 1.45rem; font-weight: 400; margin-bottom: 0.6rem; }
     .card-preview-body p { color: var(--muted); font-size: 0.92rem; font-weight: 300; margin-bottom: 1.4rem; }
-    .card-preview-body a { color: var(--primary); font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08
+    .card-preview-body a { color: var(--primary); font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; }
+
+    .cta-banner {
+      background: var(--wood-light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 5.5rem 2rem;
+      text-align: center;
+    }
+
+    .cta-banner h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 1rem; color: var(--primary); font-weight: 300; }
+    .cta-banner p { color: var(--secondary); max-width: 600px; margin: 0 auto 2.2rem; font-size: 1.05rem; font-weight: 300; }
+
+    footer { background: var(--primary); color: #D6D3D1; padding: 4.5rem 2rem 2.5rem; }
+    .footer-wrap { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; border-bottom: 1px solid #292524; padding-bottom: 3rem; }
+    .footer-col h3 { color: white; font-size: 1.25rem; font-weight: 400; margin-bottom: 1.2rem; letter-spacing: 0.04em; }
+    .footer-col p, .footer-col a { color: #A8A29E; font-size: 0.92rem; font-weight: 300; text-decoration: none; line-height: 1.8; display: block; }
+    .footer-col a:hover { color: var(--wood-soft); }
+    .copyright { text-align: center; padding-top: 2rem; font-size: 0.82rem; color: #78716C; font-weight: 300; }
+
+    .admin-float-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: #FAF8F5;
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 9px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      z-index: 999;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .footer-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-wrap">
+      <a href="index.html" class="logo">MT <span>MOBILIÁRIO</span> | Furniture</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="portfolio.html">Portfólio</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="orcamento.html" class="btn-nav-orcamento">Pedir Orçamento</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">Marcenaria de Autor</span>
+      <h1>Criamos Móveis com Caráter & Identidade</h1>
+      <p>Transformamos ideias em espaços nobres através de marcenaria por medida e acabamentos refinados.</p>
+      <div class="hero-btns">
+        <a href="portfolio.html" class="btn-primary">Ver Portfólio</a>
+        <a href="orcamento.html" class="btn-secondary">Pedir Orçamento</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-wrap">
+    <div class="section-title">
+      <h2>Obras em Destaque</h2>
+      <p>Projetos recentemente materializados pelo nosso atelier.</p>
+    </div>
+
+    <div class="grid-preview" id="destaques-container">
+      <p style="text-align: center; grid-column: 1 / -1; color: var(--muted);">A carregar obras em destaque...</p>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <h2>Idealizou um espaço exclusivo?</h2>
+    <p>Executamos projetos residenciais e corporativos adaptados com precisão às suas necessidades.</p>
+    <a href="orcamento.html" class="btn-primary">Solicitar Orçamento Gratuito</a>
+  </section>
+
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-col">
+        <h3>MT Mobiliário | Furniture</h3>
+        <p>Carpintaria contemporânea, marcenaria de autor e soluções integradas por medida.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Menu</h3>
+        <a href="portfolio.html">Portfólio de Projetos</a>
+        <a href="sobre.html">Sobre o Atelier</a>
+        <a href="contactos.html">Contactos Diretos</a>
+        <a href="orcamento.html">Pedir Orçamento</a>
+      </div>
+      <div class="footer-col">
+        <h3>Atelier</h3>
+        <p>Porto, Portugal</p>
+        <p>Email: atelier@mtmobiliario.pt</p>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 MT Mobiliário | Furniture. Todos os direitos reservados.</div>
+  </footer>
+
+  <a href="./admin/" class="admin-float-btn">Painel de Edição</a>
+
+  <script>
+    fetch('./portfolio.json')
+      .then(res => res.json())
+      .then(data => {
+        const itens = (data.items || data || []).slice(0, 3);
+        const container = document.getElementById('destaques-container');
+        container.innerHTML = '';
+
+        itens.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'card-preview';
+          card.innerHTML = `
+            <img src="${item.foto || 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80'}" alt="${item.titulo}">
+            <div class="card-preview-body">
+              <small>${item.categoria || 'Móvel'}</small>
+              <h3>${item.titulo}</h3>
+              <p>${item.descricao ? item.descricao.substring(0, 105) + '...' : ''}</p>
+              <a href="portfolio.html">Explorar Obra &rarr;</a>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(() => {
+        document.getElementById('destaques-container').innerHTML = '';
+      });
+
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>
