@@ -1,0 +1,24 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Pasta onde as fotos enviadas pelo cliente serão guardadas
+media_folder: "assets/fotos"
+public_folder: "assets/fotos"
+
+collections:
+  - name: "catalogo"
+    label: "Catálogo de Móveis"
+    files:
+      - label: "Lista de Produtos"
+        name: "moveis"
+        file: "moveis.json"
+        fields:
+          - label: "Móveis"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Nome do Móvel", name: "nome", widget: "string" }
+              - { label: "Preço (€)", name: "preco", widget: "number", value_type: "float" }
+              - { label: "Fotografia", name: "foto", widget: "image" }
+              - { label: "Descrição", name: "descricao", widget: "text" }
