@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio de Obras | MT Mobiliário</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-warm: #FAF8F5;
+      --card-bg: #FFFFFF;
+      --primary: #1C1917;
+      --secondary: #44403C;
+      --muted: #78716C;
+      --wood-warm: #A06235;
+      --wood-soft: #C89567;
+      --wood-light: #F4ECE1;
+      --border: #E7E2DA;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--primary); font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1, h2, h3 { font-family: 'Cinzel', serif; }
+
+    header { background: rgba(250, 248, 245, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav-wrap { max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; }
+    .logo { font-size: 1.35rem; font-weight: 700; color: var(--primary); text-decoration: none; font-family: 'Cinzel', serif; }
+    .logo span { color: var(--wood-warm); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--secondary); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--wood-warm); }
+    .btn-nav-orcamento { background: var(--wood-warm); color: white !important; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: 600; }
+
+    .page-header { background: var(--primary); color: white; padding: 4rem 2rem; text-align: center; }
+    .page-header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+    .page-header p { color: #D6D3D1; font-size: 1.1rem; }
+
+    .portfolio-section { max-width: 1240px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+    .category-tabs { display: flex; justify-content: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+    .tab-btn { background: white; border: 1px solid var(--border); color: var(--secondary); padding: 0.6rem 1.4rem; border-radius: 40px; font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+    .tab-btn:hover, .tab-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2.2rem; }
+    .card { background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; }
+    .card-img-wrap { width: 100%; height: 280px; position: relative; overflow: hidden; background: #E7E2DA; }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .card-badge { position: absolute; top: 16px; left: 16px; background: rgba(28, 25, 23, 0.85); color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.72rem; text-transform: uppercase; font-weight: 600; }
+    
+    .card-info { padding: 1.8rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .card-place { font-size: 0.82rem; color: var(--wood-warm); font-weight: 600; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .card-title { font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--primary); }
+    .card-desc { font-size: 0.92rem; color: var(--muted); margin-bottom: 1.8rem; line-height: 1.6; flex-grow: 1; }
+    
+    .btn-quote { display: flex; align-items: center; justify-content: center; width: 100%; padding: 0.85rem 1rem; border-radius: 4px; background: var(--wood-light); color: var(--wood-warm); border: 1px solid rgba(160, 98, 53, 0.2); text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: all 0.2s; }
+    .btn-quote:hover { background: var(--wood-warm); color: white; }
+
+    footer { background: var(--primary); color: #D6D3D1; padding: 4rem 2rem 2rem; }
+    .footer-wrap { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; border-bottom: 1px solid #292524; padding-bottom: 3rem; }
+    .footer-col h3 { color: white; font-size: 1.1rem; margin-bottom: 1.2rem; }
+    .footer-col p, .footer-col a { color: #A8A29E; font-size: 0.92rem; text-decoration: none; line-height: 1.8; display: block; }
+    .copyright { text-align: center; padding-top: 2rem; font-size: 0.85rem; color: #78716C; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-wrap">
+      <a href="index.html" class="logo">MT <span>MOBILIÁRIO</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="portfolio.html" class="active">Portfólio</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="orcamento.html" class="btn-nav-orcamento">Pedir Orçamento</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <h1>O Nosso Portfólio</h1>
+    <p>Galeria de trabalhos executados por medida</p>
+  </div>
+
+  <section class="portfolio-section">
+    <div class="category-tabs" id="category-filters">
+      <button class="tab-btn active" onclick="filtrarCategoria('Todas')">Todas as Obras</button>
+    </div>
+
+    <div class="grid" id="portfolio-container">
+      <p style="text-align: center; grid-column: 1 / -1; color: var(--muted);">A carregar portfólio...</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-col">
+        <h3>MT Mobiliário</h3>
+        <p>Carpintaria contemporânea e marcenaria por medida.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Menu</h3>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="contactos.html">Contactos</a>
+        <a href="orcamento.html">Pedir Orçamento</a>
+      </div>
+      <div class="footer-col">
+        <h3>Atelier</h3>
+        <p>Porto, Portugal</p>
+        <p>Email: atelier@mtmobiliario.pt</p>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 MT Mobiliário. Todos os direitos reservados.</div>
+  </footer>
+
+  <script>
+    const numeroWhatsApp = "351912345678";
+    let todosOsProjetos = [];
+
+    fetch('./portfolio.json')
+      .then(res => res.json())
+      .then(data => {
+        todosOsProjetos = data.items || data || [];
+        criarBotoes();
+        mostrarProjetos(todosOsProjetos);
+      })
+      .catch(() => {
+        document.getElementById('portfolio-container').innerHTML = 
+          '<p style="text-align: center; grid-column: 1/-1; color: var(--muted);">Sem trabalhos registados.</p>';
+      });
+
+    function criarBotoes() {
+      const categorias = ['Todas', ...new Set(todosOsProjetos.map(item => item.categoria).filter(Boolean))];
+      const divFiltros = document.getElementById('category-filters');
+      divFiltros.innerHTML = '';
+
+      categorias.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = `tab-btn ${cat === 'Todas' ? 'active' : ''}`;
+        btn.innerText = cat;
+        btn.onclick = () => {
+          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          filtrarCategoria(cat);
+        };
+        divFiltros.appendChild(btn);
+      });
+    }
+
+    function filtrarCategoria(cat) {
+      if (cat === 'Todas') {
+        mostrarProjetos(todosOsProjetos);
+      } else {
+        mostrarProjetos(todosOsProjetos.filter(item => item.categoria === cat));
+      }
+    }
+
+    function mostrarProjetos(lista) {
+      const container = document.getElementById('portfolio-container');
+      container.innerHTML = '';
+
+      if (lista.length === 0) {
+        container.innerHTML = '<p style="text-align: center; grid-column: 1/-1; color: var(--muted);">Sem projetos nesta categoria.</p>';
+        return;
+      }
+
+      lista.forEach(item => {
+        const mensagemWA = encodeURIComponent(`Olá! Vi no vosso portfólio o projeto "${item.titulo}" e pretendo informações.`);
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="card-img-wrap">
+            ${item.categoria ? `<span class="card-badge">${item.categoria}</span>` : ''}
+            <img src="${item.foto || 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80'}" alt="${item.titulo}">
+          </div>
+          <div class="card-info">
+            ${item.local ? `<span class="card-place">📍 ${item.local}</span>` : ''}
+            <h3 class="card-title">${item.titulo}</h3>
+            <p class="card-desc">${item.descricao || ''}</p>
+            <a href="https://wa.me/${numeroWhatsApp}?text=${mensagemWA}" target="_blank" class="btn-quote">
+              Pedir Orçamento Semelhante
+            </a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
