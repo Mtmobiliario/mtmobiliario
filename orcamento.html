@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedir Orçamento | MT Mobiliário</title>
+  <title>Pedir Orçamento | MT Mobiliário | Furniture</title>
   
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -17,47 +17,158 @@
       --secondary: #44403C;
       --muted: #78716C;
       --wood-warm: #A06235;
+      --wood-soft: #C89567;
       --border: #E7E2DA;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: var(--bg-warm); color: var(--primary); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; }
-    h1, h2, h3 { font-family: 'Cinzel', serif; }
+    body {
+      background-color: var(--bg-warm);
+      color: var(--primary);
+      font-family: 'Outfit', -apple-system, sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      letter-spacing: 0.015em;
+    }
 
-    header { background: rgba(250, 248, 245, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-    .nav-wrap { max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; }
-    .logo { font-size: 1.35rem; font-weight: 700; color: var(--primary); text-decoration: none; font-family: 'Cinzel', serif; }
-    .logo span { color: var(--wood-warm); }
+    h1, h2, h3, .logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    header {
+      background: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.3rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo span { color: var(--wood-warm); font-weight: 300; }
+
     .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-    .nav-links a { text-decoration: none; color: var(--secondary); font-size: 0.95rem; font-weight: 500; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--secondary);
+      font-size: 0.88rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
     .nav-links a:hover, .nav-links a.active { color: var(--wood-warm); }
-    .btn-nav-orcamento { background: var(--wood-warm); color: white !important; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: 600; }
 
-    .page-header { background: var(--primary); color: white; padding: 4rem 2rem; text-align: center; }
-    .page-header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+    .btn-nav-orcamento {
+      background: var(--wood-warm);
+      color: white !important;
+      padding: 0.65rem 1.3rem;
+      border-radius: 2px;
+      font-size: 0.8rem !important;
+      letter-spacing: 0.08em !important;
+    }
 
-    .form-wrap { max-width: 780px; margin: -2rem auto 6rem; background: white; border: 1px solid var(--border); border-radius: 8px; padding: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-    .form-group { margin-bottom: 1.5rem; }
-    .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--secondary); }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.85rem; border: 1px solid var(--border); border-radius: 4px; font-size: 0.95rem; font-family: inherit; background: #FAF9F7; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--wood-warm); background: white; }
+    .page-header { background: var(--primary); color: white; padding: 4.5rem 2rem; text-align: center; }
+    .page-header h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 0.4rem; font-weight: 300; }
+    .page-header p { color: #D6D3D1; font-size: 1.05rem; font-weight: 300; }
+
+    .form-wrap {
+      max-width: 780px;
+      margin: -2rem auto 6.5rem;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 3.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    }
+
+    .form-group { margin-bottom: 1.6rem; }
+    .form-group label {
+      display: block;
+      font-weight: 400;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-size: 0.95rem;
+      font-weight: 300;
+      font-family: inherit;
+      background: #FAF9F7;
+    }
+
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--wood-warm);
+      background: white;
+    }
+
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 
-    .btn-submit { width: 100%; background: var(--wood-warm); color: white; border: none; padding: 1.1rem; border-radius: 4px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .btn-submit {
+      width: 100%;
+      background: var(--wood-warm);
+      color: white;
+      border: none;
+      padding: 1.1rem;
+      border-radius: 2px;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 400;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
     .btn-submit:hover { background: #875128; }
 
-    footer { background: var(--primary); color: #D6D3D1; padding: 4rem 2rem 2rem; }
+    footer { background: var(--primary); color: #D6D3D1; padding: 4.5rem 2rem 2.5rem; }
     .footer-wrap { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; border-bottom: 1px solid #292524; padding-bottom: 3rem; }
-    .footer-col h3 { color: white; font-size: 1.1rem; margin-bottom: 1.2rem; }
-    .footer-col p, .footer-col a { color: #A8A29E; font-size: 0.92rem; text-decoration: none; line-height: 1.8; display: block; }
-    .copyright { text-align: center; padding-top: 2rem; font-size: 0.85rem; color: #78716C; }
-    @media (max-width: 768px) { .form-row { grid-template-columns: 1fr; } .form-wrap { padding: 2rem; margin: 2rem 1rem 4rem; } .nav-links { display: none; } }
+    .footer-col h3 { color: white; font-size: 1.25rem; font-weight: 400; margin-bottom: 1.2rem; }
+    .footer-col p, .footer-col a { color: #A8A29E; font-size: 0.92rem; font-weight: 300; text-decoration: none; line-height: 1.8; display: block; }
+    .footer-col a:hover { color: var(--wood-soft); }
+    .copyright { text-align: center; padding-top: 2rem; font-size: 0.82rem; color: #78716C; font-weight: 300; }
+
+    @media (max-width: 768px) {
+      .form-row { grid-template-columns: 1fr; }
+      .form-wrap { padding: 2rem; margin: 2rem 1rem 4rem; }
+      .nav-links { display: none; }
+      .footer-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="nav-wrap">
-      <a href="index.html" class="logo">MT <span>MOBILIÁRIO</span></a>
+      <a href="index.html" class="logo">MT <span>MOBILIÁRIO</span> | Furniture</a>
       <ul class="nav-links">
         <li><a href="index.html">Início</a></li>
         <li><a href="portfolio.html">Portfólio</a></li>
@@ -70,11 +181,10 @@
 
   <div class="page-header">
     <h1>Solicitar Orçamento</h1>
-    <p>Diga-nos o que pretende executar e entraremos em contacto brevemente</p>
+    <p>Partilhe o seu projeto e enviaremos uma proposta detalhada</p>
   </div>
 
   <div class="form-wrap">
-    <!-- Formulário integrado nativamente na Netlify -->
     <form name="orcamento" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="orcamento" />
 
@@ -115,7 +225,7 @@
 
       <div class="form-group">
         <label for="descricao">Detalhes do Projeto & Medidas Estimadas</label>
-        <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva o que idealiza: dimensões aproximadas, tipo de materiais, cores pretendidas, etc."></textarea>
+        <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva os acabamentos pretendidos, medidas aproximadas ou detalhes da divisão."></textarea>
       </div>
 
       <button type="submit" class="btn-submit">Enviar Pedido de Orçamento</button>
@@ -125,8 +235,8 @@
   <footer>
     <div class="footer-wrap">
       <div class="footer-col">
-        <h3>MT Mobiliário</h3>
-        <p>Projetos de carpintaria e marcenaria de autor.</p>
+        <h3>MT Mobiliário | Furniture</h3>
+        <p>Carpintaria contemporânea, marcenaria de autor e soluções integradas por medida.</p>
       </div>
       <div class="footer-col">
         <h3>Menu</h3>
@@ -140,7 +250,7 @@
         <p>Porto, Portugal</p>
       </div>
     </div>
-    <div class="copyright">&copy; 2026 MT Mobiliário. Todos os direitos reservados.</div>
+    <div class="copyright">&copy; 2026 MT Mobiliário | Furniture. Todos os direitos reservados.</div>
   </footer>
 
 </body>
