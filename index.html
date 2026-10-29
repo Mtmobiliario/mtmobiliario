@@ -380,61 +380,75 @@
   <a href="./admin/" class="admin-float-btn">Painel de Edição</a>
 
   <script>
-    // Carrossel deslizante da esquerda para a direita
-    const slides = document.querySelectorAll('.slide');
-    const indicatorsContainer = document.getElementById('slider-indicators');
-    let indiceAtual = 0;
-    const duracaoSlide = 5000;
+  // Carrossel deslizante da esquerda para a direita
+const slides = document.querySelectorAll('.slide');
+const indicatorsContainer = document.getElementById('slider-indicators');
+let indiceAtual = 0;
+const duracaoSlide = 5000;
+let timerCarrossel = null;
 
-    if (indicatorsContainer && slides.length > 0) {
-      slides.forEach((_, idx) => {
-        const dot = document.createElement('div');
-        dot.className = `indicator-dot ${idx === 0 ? 'active' : ''}`;
-        dot.onclick = () => mudarParaSlide(idx);
-        indicatorsContainer.appendChild(dot);
-      });
+if (indicatorsContainer && slides.length > 0) {
+  indicatorsContainer.innerHTML = '';
+  slides.forEach((_, idx) => {
+    const dot = document.createElement('div');
+    dot.className = `indicator-dot ${idx === 0 ? 'active' : ''}`;
+    dot.onclick = () => {
+      mudarParaSlide(idx);
+      reiniciarTimer();
+    };
+    indicatorsContainer.appendChild(dot);
+  });
+}
+
+function mudarParaSlide(novoIndice) {
+  if (novoIndice === indiceAtual || slides.length === 0) return;
+
+  const dots = document.querySelectorAll('.indicator-dot');
+  const slideSaindo = slides[indiceAtual];
+  const slideEntrando = slides[novoIndice];
+
+  // Remove estados e prepara posições
+  slides.forEach((s, idx) => {
+    if (idx !== indiceAtual && idx !== novoIndice) {
+      s.className = 'slide';
+      s.removeAttribute('style');
+      // Mantém apenas a imagem de fundo definida originalmente
     }
+  });
 
-    function mudarParaSlide(novoIndice) {
-      if (novoIndice === indiceAtual || slides.length === 0) return;
+  // O slide que sai desliza para a direita
+  slideSaindo.classList.remove('active');
+  slideSaindo.classList.add('exit-right');
 
-      const dots = document.querySelectorAll('.indicator-dot');
-      const slideSaindo = slides[indiceAtual];
-      const slideEntrando = slides[novoIndice];
+  // O slide que entra surge da esquerda
+  slideEntrando.classList.remove('exit-right');
+  slideEntrando.classList.add('active');
 
-      slideSaindo.classList.remove('active');
-      slideSaindo.classList.add('exit-right');
+  if (dots.length > 0) {
+    if (dots[indiceAtual]) dots[indiceAtual].classList.remove('active');
+    if (dots[novoIndice]) dots[novoIndice].classList.add('active');
+  }
 
-      slideEntrando.style.transition = 'none';
-      slideEntrando.style.transform = 'translateX(-100%)';
-      slideEntrando.classList.remove('exit-right');
+  setTimeout(() => {
+    slideSaindo.classList.remove('exit-right');
+  }, 1200);
 
-      void slideEntrando.offsetWidth;
+  indiceAtual = novoIndice;
+}
 
-      slideEntrando.style.transition = 'transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s ease';
-      slideEntrando.classList.add('active');
+function proximoSlide() {
+  const proximo = (indiceAtual + 1) % slides.length;
+  mudarParaSlide(proximo);
+}
 
-      if (dots.length > 0) {
-        dots[indiceAtual].classList.remove('active');
-        dots[novoIndice].classList.add('active');
-      }
+function reiniciarTimer() {
+  if (timerCarrossel) clearInterval(timerCarrossel);
+  if (slides.length > 1) {
+    timerCarrossel = setInterval(proximoSlide, duracaoSlide);
+  }
+}
 
-      setTimeout(() => {
-        slideSaindo.classList.remove('exit-right');
-        slideSaindo.style.transform = 'translateX(-100%)';
-      }, 1200);
-
-      indiceAtual = novoIndice;
-    }
-
-    function proximoSlide() {
-      const proximo = (indiceAtual + 1) % slides.length;
-      mudarParaSlide(proximo);
-    }
-
-    if (slides.length > 1) {
-      setInterval(proximoSlide, duracaoSlide);
-    }
+reiniciarTimer();
 
     // Carregar Obras em Destaque
     fetch('./portfolio.json')
