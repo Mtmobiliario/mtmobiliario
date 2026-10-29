@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MT Mobiliário | Marcenaria de Autor & Design por Medida</title>
+  <title>MT Mobiliário | Furniture</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <style>
@@ -22,157 +22,162 @@
       --wood-light: #F4ECE1;
       --border: #E7E2DA;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: var(--bg-warm); color: var(--primary); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; }
-    h1, h2, h3 { font-family: 'Cinzel', serif; }
 
-    /* Navegação */
-    header { background: rgba(250, 248, 245, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-    .nav-wrap { max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; }
-    .logo { font-size: 1.35rem; font-weight: 700; color: var(--primary); text-decoration: none; font-family: 'Cinzel', serif; }
-    .logo span { color: var(--wood-warm); }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-warm);
+      color: var(--primary);
+      font-family: 'Outfit', -apple-system, sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      letter-spacing: 0.015em;
+    }
+
+    h1, h2, h3, .logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    header {
+      background: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.3rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo span { color: var(--wood-warm); font-weight: 300; }
+
     .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-    .nav-links a { text-decoration: none; color: var(--secondary); font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--secondary);
+      font-size: 0.88rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
     .nav-links a:hover, .nav-links a.active { color: var(--wood-warm); }
-    .btn-nav-orcamento { background: var(--wood-warm); color: white !important; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: 600; }
+
+    .btn-nav-orcamento {
+      background: var(--wood-warm);
+      color: white !important;
+      padding: 0.65rem 1.3rem;
+      border-radius: 2px;
+      font-size: 0.8rem !important;
+      letter-spacing: 0.08em !important;
+      transition: background 0.2s !important;
+    }
+
     .btn-nav-orcamento:hover { background: #875128 !important; }
 
-    /* Hero */
-    .hero { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 5rem 1.5rem; background: linear-gradient(rgba(28, 25, 23, 0.75), rgba(28, 25, 23, 0.75)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat; }
-    .hero-content { max-width: 820px; }
-    .hero-tag { display: inline-block; background: rgba(200, 149, 103, 0.25); border: 1px solid var(--wood-soft); color: #F5EBE1; padding: 6px 18px; border-radius: 30px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem; }
-    .hero h1 { font-size: clamp(2.3rem, 5vw, 4rem); line-height: 1.15; margin-bottom: 1.2rem; }
-    .hero p { font-size: 1.15rem; color: #E7E5E4; max-width: 620px; margin: 0 auto 2.5rem; font-weight: 300; }
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 5rem 1.5rem;
+      background: linear-gradient(rgba(28, 25, 23, 0.72), rgba(28, 25, 23, 0.72)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+    }
+
+    .hero-content { max-width: 840px; }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(200, 149, 103, 0.2);
+      border: 1px solid var(--wood-soft);
+      color: #F5EBE1;
+      padding: 5px 16px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #E7E5E4;
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      font-weight: 200;
+      letter-spacing: 0.02em;
+    }
+
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: var(--wood-warm); color: white; text-decoration: none; padding: 1rem 2.2rem; border-radius: 4px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; }
+    .btn-primary {
+      background: var(--wood-warm);
+      color: white;
+      text-decoration: none;
+      padding: 0.95rem 2.2rem;
+      border-radius: 2px;
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.25s;
+    }
+
     .btn-primary:hover { background: #875128; }
-    .btn-secondary { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.4); text-decoration: none; padding: 1rem 2.2rem; border-radius: 4px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.4);
+      text-decoration: none;
+      padding: 0.95rem 2.2rem;
+      border-radius: 2px;
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.25s;
+    }
+
     .btn-secondary:hover { background: white; color: var(--primary); }
 
-    /* Destaques */
-    .section-wrap { max-width: 1240px; margin: 0 auto; padding: 6rem 2rem; }
-    .section-title { text-align: center; margin-bottom: 3.5rem; }
-    .section-title h2 { font-size: 2.3rem; margin-bottom: 0.6rem; }
-    .section-title p { color: var(--muted); }
+    .section-wrap { max-width: 1240px; margin: 0 auto; padding: 6.5rem 2rem; }
+    .section-title { text-align: center; margin-bottom: 4rem; }
+    .section-title h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 0.6rem; font-weight: 300; }
+    .section-title p { color: var(--muted); font-size: 1rem; font-weight: 300; }
 
     .grid-preview { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
-    .card-preview { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-    .card-preview img { width: 100%; height: 260px; object-fit: cover; }
+    .card-preview { background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.03); }
+    .card-preview img { width: 100%; height: 280px; object-fit: cover; }
     .card-preview-body { padding: 1.8rem; }
-    .card-preview-body h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
-    .card-preview-body p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.2rem; }
-
-    /* Banner CTA */
-    .cta-banner { background: var(--wood-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 5rem 2rem; text-align: center; }
-    .cta-banner h2 { font-size: 2.2rem; margin-bottom: 1rem; color: var(--primary); }
-    .cta-banner p { color: var(--secondary); max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem; }
-
-    /* Rodapé */
-    footer { background: var(--primary); color: #D6D3D1; padding: 4rem 2rem 2rem; }
-    .footer-wrap { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; border-bottom: 1px solid #292524; padding-bottom: 3rem; }
-    .footer-col h3 { color: white; font-size: 1.1rem; margin-bottom: 1.2rem; }
-    .footer-col p, .footer-col a { color: #A8A29E; font-size: 0.92rem; text-decoration: none; line-height: 1.8; display: block; }
-    .footer-col a:hover { color: var(--wood-soft); }
-    .copyright { text-align: center; padding-top: 2rem; font-size: 0.85rem; color: #78716C; }
-
-    .admin-float-btn { position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: #FAF8F5; border: 1px solid rgba(255,255,255,0.15); padding: 10px 18px; border-radius: 50px; text-decoration: none; font-size: 0.85rem; box-shadow: 0 6px 20px rgba(0,0,0,0.25); z-index: 999; }
-    @media (max-width: 768px) { .nav-links { display: none; } }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="nav-wrap">
-      <a href="index.html" class="logo">MT <span>MOBILIÁRIO</span></a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Início</a></li>
-        <li><a href="portfolio.html">Portfólio</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="contactos.html">Contactos</a></li>
-        <li><a href="orcamento.html" class="btn-nav-orcamento">Pedir Orçamento</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="hero-content">
-      <span class="hero-tag">Marcenaria por Medida</span>
-      <h1>Criamos Móveis com Caráter & Identidade</h1>
-      <p>Transformamos ideias em peças duradouras com matérias-primas selecionadas e execução meticulosa.</p>
-      <div class="hero-btns">
-        <a href="portfolio.html" class="btn-primary">Ver Portfólio</a>
-        <a href="orcamento.html" class="btn-secondary">Pedir Orçamento Grátis</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-wrap">
-    <div class="section-title">
-      <h2>Destaques do Atelier</h2>
-      <p>Alguns dos projetos mais representativos desenvolvidos à medida.</p>
-    </div>
-
-    <div class="grid-preview" id="destaques-container">
-      <p style="text-align: center; grid-column: 1 / -1; color: var(--muted);">A carregar obras em destaque...</p>
-    </div>
-  </section>
-
-  <section class="cta-banner">
-    <h2>Tem um projeto ou renovação em mente?</h2>
-    <p>Trabalhamos diretamente com proprietários, designers e arquitetos para materializar o mobiliário certo.</p>
-    <a href="orcamento.html" class="btn-primary">Fazer Pedido de Orçamento</a>
-  </section>
-
-  <footer>
-    <div class="footer-wrap">
-      <div class="footer-col">
-        <h3>MT Mobiliário</h3>
-        <p>Carpintaria contemporânea, cozinhas, roupeiros e mobiliário sob medida.</p>
-      </div>
-      <div class="footer-col">
-        <h3>Menu</h3>
-        <a href="portfolio.html">Portfólio de Projetos</a>
-        <a href="sobre.html">Sobre o Atelier</a>
-        <a href="contactos.html">Contactos Diretos</a>
-        <a href="orcamento.html">Pedir Orçamento</a>
-      </div>
-      <div class="footer-col">
-        <h3>Atelier</h3>
-        <p>Porto, Portugal</p>
-        <p>Email: atelier@mtmobiliario.pt</p>
-      </div>
-    </div>
-    <div class="copyright">&copy; 2026 MT Mobiliário. Todos os direitos reservados.</div>
-  </footer>
-
-  <a href="./admin/" class="admin-float-btn">Painel de Edição</a>
-
-  <script>
-    fetch('./portfolio.json')
-      .then(res => res.json())
-      .then(data => {
-        const itens = (data.items || data || []).slice(0, 3);
-        const container = document.getElementById('destaques-container');
-        container.innerHTML = '';
-
-        itens.forEach(item => {
-          const card = document.createElement('div');
-          card.className = 'card-preview';
-          card.innerHTML = `
-            <img src="${item.foto || 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80'}" alt="${item.titulo}">
-            <div class="card-preview-body">
-              <small style="color: var(--wood-warm); text-transform: uppercase; font-weight: 600;">${item.categoria || 'Móvel'}</small>
-              <h3>${item.titulo}</h3>
-              <p>${item.descricao ? item.descricao.substring(0, 100) + '...' : ''}</p>
-              <a href="portfolio.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">Ver detalhes &rarr;</a>
-            </div>
-          `;
-          container.appendChild(card);
-        });
-      })
-      .catch(() => {
-        document.getElementById('destaques-container').innerHTML = '';
-      });
-  </script>
-</body>
-</html>
+    .card-preview-body small { color: var(--wood-warm); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.08em; font-weight: 500; display: block; margin-bottom: 0.4rem; }
+    .card-preview-body h3 { font-size: 1.45rem; font-weight: 400; margin-bottom: 0.6rem; }
+    .card-preview-body p { color: var(--muted); font-size: 0.92rem; font-weight: 300; margin-bottom: 1.4rem; }
+    .card-preview-body a { color: var(--primary); font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08
