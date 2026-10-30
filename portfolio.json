@@ -1,25 +1,32 @@
 {
   "items": [
     {
-      "titulo": "Cozinha Minimalista com Ilha em Carvalho",
+      "titulo": "Cozinha",
       "categoria": "Cozinhas",
-      "local": "Felgueiras",
+      "local": "Porto",
       "foto": "/assets/fotos/03.jpg",
-      "descricao": "Execução em termolaminado mate anti-dedadas, ilha central com bancada em quartzo e gavetões ocultos."
+      "descricao": "Cozinhas por medida, pensadas ao detalhe!\n\nCriamos espaços que aliam elegância, funcionalidade e qualidade. Cada projeto é desenvolvido à medida das suas necessidades, com materiais cuidadosamente selecionados, acabamentos modernos e soluções inteligentes para aproveitar cada espaço.\n\nNa MT Mobiliário, transformamos as suas ideias em ambientes únicos, onde o design e a funcionalidade se encontram.\n\nO seu espaço, o seu estilo, a nossa dedicação!"
     },
     {
-      "titulo": "Roupeiro Embutido com Painel Ripado",
+      "titulo": "Roupeiro",
       "categoria": "Quartos & Closets",
-      "local": "Matosinhos",
-      "foto": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80",
-      "descricao": "Portas de correr com vidro bronze reflexivo, iluminação LED integrada e interiores em linho cancelado."
+      "local": "Vila Nova de Gaia",
+      "foto": "/assets/fotos/11.jpg",
+      "descricao": "Roupeiros por medida – Organização e elegância em cada detalhe!\n\nDesenvolvemos soluções personalizadas que aproveitam cada centímetro do espaço, combinando funcionalidade, design e acabamentos de qualidade. Roupeiros pensados à medida das suas necessidades, com linhas modernas e uma integração perfeita em qualquer ambiente.\n\nNa MT Mobiliário, criamos espaços de arrumação que fazem a diferença!"
     },
     {
-      "titulo": "Móvel Suspenso com Painel em Carvalho",
+      "titulo": "Salas",
       "categoria": "Salas de Estar",
-      "local": "Vila Nova de Gaia",
-      "foto": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
-      "descricao": "Painel de TV integral em madeira natural com iluminação indireta e nichos lacados."
+      "local": "Porto",
+      "foto": "/assets/fotos/17.jpg",
+      "descricao": "Salas de estar à medida – Conforto, design e sofisticação!\n\nCriamos ambientes modernos e acolhedores, onde cada detalhe é pensado para valorizar o espaço. Desenvolvemos soluções personalizadas, como painéis de TV em madeira natural, ripados decorativos e iluminação LED indireta, combinando elegância e funcionalidade.\n\nNa MT Mobiliário, damos forma às suas ideias e criamos espaços com identidade própria!"
+    },
+    {
+      "titulo": "Cozinha",
+      "categoria": "Cozinhas",
+      "local": "Porto",
+      "foto": "/assets/fotos/04.jpg",
+      "descricao": "Cozinhas por medida, pensadas ao detalhe!\n\nCriamos espaços que aliam elegância, funcionalidade e qualidade. Cada projeto é desenvolvido à medida das suas necessidades, com materiais cuidadosamente selecionados, acabamentos modernos e soluções inteligentes para aproveitar cada espaço.\n\nNa MT Mobiliário, transformamos as suas ideias em ambientes únicos, onde o design e a funcionalidade se encontram.\n\nO seu espaço, o seu estilo, a nossa dedicação!"
     }
   ]
 }
