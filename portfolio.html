@@ -87,8 +87,10 @@
       border-radius: 2px;
       font-size: 0.8rem !important;
       letter-spacing: 0.08em !important;
-      transition: background 0.2s !important;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
+
+    .btn-nav-orcamento:hover { background: #875128 !important; transform: translateY(-2px); }
 
     .page-header { background: var(--primary); color: white; padding: 4.5rem 2rem; text-align: center; }
     .page-header h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 0.4rem; font-weight: 300; }
@@ -281,12 +283,19 @@
 
       lista.forEach(item => {
         const mensagemWA = encodeURIComponent(`Olá! Vi no vosso portfólio o projeto "${item.titulo}" e pretendo informações.`);
+        
+        // Corrige automaticamente a rota da imagem se vier com barra inicial do Sveltia
+        let fotoUrl = item.foto || 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80';
+        if (fotoUrl.startsWith('/')) {
+          fotoUrl = '.' + fotoUrl;
+        }
+
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
           <div class="card-img-wrap">
             ${item.categoria ? `<span class="card-badge">${item.categoria}</span>` : ''}
-            <img src="${item.foto || 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80'}" alt="${item.titulo}">
+            <img src="${fotoUrl}" alt="${item.titulo}">
           </div>
           <div class="card-info">
             ${item.local ? `<span class="card-place">📍 ${item.local}</span>` : ''}
