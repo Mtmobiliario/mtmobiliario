@@ -327,9 +327,17 @@
 </head>
 <body>
 
-  <header>
+<header>
     <div class="nav-wrap">
-      <a href="./index.html" class="logo">MT <span>MOBILIÁRIO</span> | Furniture</a>
+      <!-- NOVO BLOCO DO LOGOTIPO -->
+      <a href="./index.html" class="logo-container" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+        <!-- A imagem está em assets/fotos/logo.png -->
+        <img src="./assets/fotos/logo.png" alt="MT Mobiliário" style="height: 55px; width: auto; object-fit: contain;">
+        <!-- Texto ao lado direito, mantendo o estilo da fonte original -->
+        <span class="logo" style="font-size: 1.3rem; letter-spacing: 0.08em; color: var(--primary); text-transform: uppercase;">MT <span>MOBILIÁRIO</span></span>
+      </a>
+      
+      <!-- Menu de navegação (mantém o que já tinhas) -->
       <ul class="nav-links">
         <li><a href="./index.html" class="active">Início</a></li>
         <li><a href="./portfolio.html">Portfólio</a></li>
