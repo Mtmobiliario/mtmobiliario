@@ -56,7 +56,7 @@
     }
 
     .logo {
-      font-size: 1.45rem;
+      font-size: 1.3rem;
       font-weight: 400;
       color: var(--primary);
       text-decoration: none;
@@ -86,6 +86,20 @@
       border-radius: 2px;
       font-size: 0.8rem !important;
       letter-spacing: 0.08em !important;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .btn-nav-orcamento:hover { background: #875128 !important; transform: translateY(-2px); }
+
+    /* Botão Menu Hamburguer (Telemóvel) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.6rem;
+      color: var(--primary);
+      z-index: 101;
     }
 
     .page-header { background: var(--primary); color: white; padding: 4.5rem 2rem; text-align: center; }
@@ -126,31 +140,51 @@
     .footer-col a:hover { color: var(--wood-soft); }
     .copyright { text-align: center; padding-top: 2rem; font-size: 0.82rem; color: #78716C; font-weight: 300; }
 
+    /* Responsividade e Menu Telemóvel */
     @media (max-width: 768px) {
       .contact-wrap { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--bg-warm);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 100;
+        border-left: 1px solid var(--border);
+      }
+      .nav-links.active { right: 0; }
       .footer-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
     }
   </style>
 </head>
 <body>
 
- <header>
+  <header>
     <div class="nav-wrap">
-      <!-- NOVO BLOCO DO LOGOTIPO -->
-      <a href="./index.html" class="logo-container" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-        <!-- A imagem está em assets/fotos/logo.png -->
-        <img src="./assets/fotos/logo.png" alt="MT Mobiliário" style="height: 55px; width: auto; object-fit: contain;">
-        <!-- Texto ao lado direito, mantendo o estilo da fonte original -->
-        <span class="logo" style="font-size: 1.3rem; letter-spacing: 0.08em; color: var(--primary); text-transform: uppercase;">MT <span>MOBILIÁRIO</span></span>
+      <a href="./index.html" class="logo-container" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <img src="./assets/fotos/logo.png" alt="MT Mobiliário" style="height: 45px; width: auto; object-fit: contain;">
+        <span class="logo" style="font-size: 1.15rem; letter-spacing: 0.08em; color: var(--primary); text-transform: uppercase;">MT <span>MOBILIÁRIO</span></span>
       </a>
-      
-      <!-- Menu de navegação (mantém o que já tinhas) -->
-      <ul class="nav-links">
-        <li><a href="./index.html" class="active">Início</a></li>
+
+      <!-- Botão Hamburguer para Telemóveis -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+        &#9776;
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="./index.html">Início</a></li>
         <li><a href="./portfolio.html">Portfólio</a></li>
         <li><a href="./sobre.html">Sobre Nós</a></li>
-        <li><a href="./contactos.html">Contactos</a></li>
+        <li><a href="./contactos.html" class="active">Contactos</a></li>
         <li><a href="./orcamento.html" class="btn-nav-orcamento">Pedir Orçamento</a></li>
       </ul>
     </div>
@@ -209,5 +243,24 @@
     <div class="copyright">&copy; 2026 MT Mobiliário | Furniture. Todos os direitos reservados.</div>
   </footer>
 
+  <script>
+    // Script do Menu Mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (menuToggle && navLinks) {
+      menuToggle.onclick = () => {
+        navLinks.classList.toggle('active');
+        menuToggle.innerHTML = navLinks.classList.contains('active') ? '&times;' : '&#9776;';
+      };
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.onclick = () => {
+          navLinks.classList.remove('active');
+          menuToggle.innerHTML = '&#9776;';
+        };
+      });
+    }
+  </script>
 </body>
 </html>
