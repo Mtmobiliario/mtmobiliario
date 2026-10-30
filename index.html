@@ -92,6 +92,17 @@
 
     .btn-nav-orcamento:hover { background: #875128 !important; transform: translateY(-2px); }
 
+    /* Botão Menu Hamburguer (Telemóvel) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.6rem;
+      color: var(--primary);
+      z-index: 101;
+    }
+
     /* Hero e Carrossel */
     .hero {
       position: relative;
@@ -190,7 +201,6 @@
 
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-    /* Botões com Animação e Suavidade (PC e Telemóvel) */
     .btn-primary, .btn-secondary {
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
       position: relative;
@@ -205,46 +215,18 @@
       display: inline-block;
     }
 
-    .btn-primary {
-      background: var(--wood-warm);
-      color: white;
-    }
+    .btn-primary { background: var(--wood-warm); color: white; }
+    .btn-primary:hover, .btn-primary:active { background: #875128 !important; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); }
 
-    .btn-primary:hover, .btn-primary:active {
-      background: #875128 !important;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-    }
+    .btn-secondary { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.45); }
+    .btn-secondary:hover, .btn-secondary:active { background: rgba(255, 255, 255, 0.15) !important; border-color: rgba(255, 255, 255, 0.8) !important; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
 
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid rgba(255,255,255,0.45);
-    }
-
-    .btn-secondary:hover, .btn-secondary:active {
-      background: rgba(255, 255, 255, 0.15) !important;
-      border-color: rgba(255, 255, 255, 0.8) !important;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Animação de Entrada (Fade In Up) */
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .hero-content > * {
-      animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
+    .hero-content > * { animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
     .hero-tag { animation-delay: 0.1s; }
     .hero h1 { animation-delay: 0.25s; }
     .hero p { animation-delay: 0.4s; }
@@ -269,10 +251,7 @@
       transition: background 0.3s, width 0.3s;
     }
 
-    .indicator-dot.active {
-      background: var(--wood-soft);
-      width: 42px;
-    }
+    .indicator-dot.active { background: var(--wood-soft); width: 42px; }
 
     .section-wrap { max-width: 1240px; margin: 0 auto; padding: 6.5rem 2rem; }
     .section-title { text-align: center; margin-bottom: 4rem; }
@@ -287,7 +266,6 @@
     .card-preview-body h3 { font-size: 1.45rem; font-weight: 400; margin-bottom: 0.6rem; }
     .card-preview-body p { color: var(--muted); font-size: 0.92rem; font-weight: 300; margin-bottom: 1.4rem; }
     
-    /* Botão Explorar Obra com Animação Contínua na Seta */
     .btn-explorar {
       display: inline-flex;
       align-items: center;
@@ -311,9 +289,7 @@
       animation: pulseArrow 1.5s infinite ease-in-out;
     }
 
-    .btn-explorar:hover {
-      color: var(--primary);
-    }
+    .btn-explorar:hover { color: var(--primary); }
 
     .cta-banner {
       background: var(--wood-light);
@@ -333,8 +309,27 @@
     .footer-col a:hover { color: var(--wood-soft); }
     .copyright { text-align: center; padding-top: 2rem; font-size: 0.82rem; color: #78716C; font-weight: 300; }
 
+    /* Responsividade e Menu Telemóvel */
     @media (max-width: 768px) {
-      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--bg-warm);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 100;
+        border-left: 1px solid var(--border);
+      }
+      .nav-links.active { right: 0; }
       .footer-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
     }
 
@@ -345,10 +340,7 @@
         width: 100%;
         padding: 0 1rem;
       }
-      .hero-btns a {
-        width: 100%;
-        text-align: center;
-      }
+      .hero-btns a { width: 100%; text-align: center; }
     }
   </style>
 </head>
@@ -356,11 +348,17 @@
 
   <header>
     <div class="nav-wrap">
-      <a href="./index.html" class="logo-container" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-        <img src="./assets/fotos/logo.png" alt="MT Mobiliário" style="height: 55px; width: auto; object-fit: contain;">
-        <span class="logo" style="font-size: 1.3rem; letter-spacing: 0.08em; color: var(--primary); text-transform: uppercase;">MT <span>MOBILIÁRIO</span></span>
+      <a href="./index.html" class="logo-container" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <img src="./assets/fotos/logo.png" alt="MT Mobiliário" style="height: 45px; width: auto; object-fit: contain;">
+        <span class="logo" style="font-size: 1.15rem; letter-spacing: 0.08em; color: var(--primary); text-transform: uppercase;">MT <span>MOBILIÁRIO</span></span>
       </a>
-      <ul class="nav-links">
+
+      <!-- Botão Hamburguer para Telemóveis -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+        &#9776;
+      </button>
+
+      <ul class="nav-links" id="nav-links">
         <li><a href="./index.html" class="active">Início</a></li>
         <li><a href="./portfolio.html">Portfólio</a></li>
         <li><a href="./sobre.html">Sobre Nós</a></li>
@@ -381,7 +379,7 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <span class="hero-tag">MT MOBILIÁRIO - CARPINTARIA</span>
+      <span class="hero-tag">Marcenaria de Autor</span>
       <h1>SOLUÇÕES ÚNICAS PARA ESPAÇOS ÚNICOS</h1>
       <p>Do projeto à instalação, transformamos ideias em realidade, sempre com atenção ao detalhe e às necessidades de cada cliente.</p>
       <div class="hero-btns">
@@ -433,6 +431,25 @@
   </footer>
 
   <script>
+    // Script do Menu Mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (menuToggle && navLinks) {
+      menuToggle.onclick = () => {
+        navLinks.classList.toggle('active');
+        menuToggle.innerHTML = navLinks.classList.contains('active') ? '&times;' : '&#9776;';
+      };
+
+      // Fechar menu ao clicar num link
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.onclick = () => {
+          navLinks.classList.remove('active');
+          menuToggle.innerHTML = '&#9776;';
+        };
+      });
+    }
+
     // Carrossel deslizante da esquerda para a direita
     const slides = document.querySelectorAll('.slide');
     const indicatorsContainer = document.getElementById('slider-indicators');
