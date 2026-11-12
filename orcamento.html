@@ -56,7 +56,7 @@
     }
 
     .logo {
-      font-size: 1.45rem;
+      font-size: 1.3rem;
       font-weight: 400;
       color: var(--primary);
       text-decoration: none;
@@ -86,6 +86,20 @@
       border-radius: 2px;
       font-size: 0.8rem !important;
       letter-spacing: 0.08em !important;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .btn-nav-orcamento:hover { background: #875128 !important; transform: translateY(-2px); }
+
+    /* Botão Menu Hamburguer (Telemóvel) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.6rem;
+      color: var(--primary);
+      z-index: 101;
     }
 
     .page-header { background: var(--primary); color: white; padding: 4.5rem 2rem; text-align: center; }
@@ -100,6 +114,8 @@
       border-radius: 4px;
       padding: 3.5rem;
       box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      position: relative;
+      z-index: 10;
     }
 
     .form-group { margin-bottom: 1.6rem; }
@@ -156,33 +172,53 @@
     .footer-col a:hover { color: var(--wood-soft); }
     .copyright { text-align: center; padding-top: 2rem; font-size: 0.82rem; color: #78716C; font-weight: 300; }
 
+    /* Responsividade e Menu Telemóvel */
     @media (max-width: 768px) {
       .form-row { grid-template-columns: 1fr; }
       .form-wrap { padding: 2rem; margin: 2rem 1rem 4rem; }
-      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--bg-warm);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 100;
+        border-left: 1px solid var(--border);
+      }
+      .nav-links.active { right: 0; }
       .footer-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
     }
   </style>
 </head>
 <body>
 
- <header>
+  <header>
     <div class="nav-wrap">
-      <!-- NOVO BLOCO DO LOGOTIPO -->
-      <a href="./index.html" class="logo-container" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-        <!-- A imagem está em assets/fotos/logo.png -->
-        <img src="./assets/fotos/logo.png" alt="MT Mobiliário" style="height: 55px; width: auto; object-fit: contain;">
-        <!-- Texto ao lado direito, mantendo o estilo da fonte original -->
-        <span class="logo" style="font-size: 1.3rem; letter-spacing: 0.08em; color: var(--primary); text-transform: uppercase;">MT <span>MOBILIÁRIO</span></span>
+      <a href="./" class="logo-container" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <img src="./assets/fotos/logo.png" alt="MT Mobiliário" style="height: 45px; width: auto; object-fit: contain;">
+        <span class="logo" style="font-size: 1.15rem; letter-spacing: 0.08em; color: var(--primary); text-transform: uppercase;">MT <span>MOBILIÁRIO</span></span>
       </a>
-      
-      <!-- Menu de navegação (mantém o que já tinhas) -->
-      <ul class="nav-links">
-        <li><a href="./index.html" class="active">Início</a></li>
-        <li><a href="./portfolio.html">Portfólio</a></li>
-        <li><a href="./sobre.html">Sobre Nós</a></li>
-        <li><a href="./contactos.html">Contactos</a></li>
-        <li><a href="./orcamento.html" class="btn-nav-orcamento">Pedir Orçamento</a></li>
+
+      <!-- Botão Hamburguer para Telemóveis -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+        &#9776;
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="./">Início</a></li>
+        <li><a href="./portfolio">Portfólio</a></li>
+        <li><a href="./sobre">Sobre Nós</a></li>
+        <li><a href="./contactos">Contactos</a></li>
+        <li><a href="./orcamento" class="btn-nav-orcamento">Pedir Orçamento</a></li>
       </ul>
     </div>
   </header>
@@ -193,34 +229,37 @@
   </div>
 
   <div class="form-wrap">
-    <form name="orcamento" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="orcamento" />
+    <form action="https://formsubmit.co/mtmobiliario0@gmail.com" method="POST">
+      <!-- Configurações do envio por email -->
+      <input type="hidden" name="_subject" value="Novo Pedido de Orçamento - MT Mobiliário">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
 
       <div class="form-row">
         <div class="form-group">
           <label for="nome">Nome Completo *</label>
-          <input type="text" id="nome" name="nome" required placeholder="Ex: João Pereira">
+          <input type="text" id="nome" name="Nome" required placeholder="Ex: João Pereira">
         </div>
         <div class="form-group">
           <label for="telefone">Contacto Telefónico *</label>
-          <input type="tel" id="telefone" name="telefone" required placeholder="Ex: 912 345 678">
+          <input type="tel" id="telefone" name="Telefone" required placeholder="Ex: 912 345 678">
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
           <label for="email">Correio Eletrónico *</label>
-          <input type="email" id="email" name="email" required placeholder="exemplo@email.com">
+          <input type="email" id="email" name="Email" required placeholder="exemplo@email.com">
         </div>
         <div class="form-group">
           <label for="localidade">Localidade da Obra</label>
-          <input type="text" id="localidade" name="localidade" placeholder="Ex: Porto, Matosinhos, Gaia...">
+          <input type="text" id="localidade" name="Localidade" placeholder="Ex: Porto, Matosinhos, Gaia...">
         </div>
       </div>
 
       <div class="form-group">
         <label for="tipo">Tipo de Trabalho Pretendido *</label>
-        <select id="tipo" name="tipo" required>
+        <select id="tipo" name="Tipo_de_Trabalho" required>
           <option value="" disabled selected>Selecione uma opção...</option>
           <option value="Cozinha Completa">Cozinha Completa</option>
           <option value="Roupeiro ou Closet">Roupeiro / Closet por medida</option>
@@ -233,7 +272,7 @@
 
       <div class="form-group">
         <label for="descricao">Detalhes do Projeto & Medidas Estimadas</label>
-        <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva os acabamentos pretendidos, medidas aproximadas ou detalhes da divisão."></textarea>
+        <textarea id="descricao" name="Detalhes" rows="5" placeholder="Descreva os acabamentos pretendidos, medidas aproximadas ou detalhes da divisão."></textarea>
       </div>
 
       <button type="submit" class="btn-submit">Enviar Pedido de Orçamento</button>
@@ -248,18 +287,37 @@
       </div>
       <div class="footer-col">
         <h3>Menu</h3>
-        <a href="index.html">Início</a>
-        <a href="portfolio.html">Portfólio</a>
-        <a href="sobre.html">Sobre Nós</a>
-        <a href="contactos.html">Contactos</a>
+        <a href="./">Início</a>
+        <a href="./portfolio">Portfólio</a>
+        <a href="./sobre">Sobre Nós</a>
+        <a href="./contactos">Contactos</a>
       </div>
       <div class="footer-col">
-        <h3>MT MOBILIÁRIOr</h3>
+        <h3>MT MOBILIÁRIO</h3>
         <p>Rua da Aldeia Nova, AP 118, Nº 184, 4595-278 Meixomil, Paços de Ferreira, Distrito do Porto.</p>
       </div>
     </div>
     <div class="copyright">&copy; 2026 MT Mobiliário | Carpintaria. Todos os direitos reservados.</div>
   </footer>
 
+  <script>
+    // Script do Menu Mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (menuToggle && navLinks) {
+      menuToggle.onclick = () => {
+        navLinks.classList.toggle('active');
+        menuToggle.innerHTML = navLinks.classList.contains('active') ? '&times;' : '&#9776;';
+      };
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.onclick = () => {
+          navLinks.classList.remove('active');
+          menuToggle.innerHTML = '&#9776;';
+        };
+      });
+    }
+  </script>
 </body>
 </html>
