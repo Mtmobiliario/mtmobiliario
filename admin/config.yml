@@ -4,26 +4,31 @@ backend:
   branch: main
 
 media_folder: "assets/fotos"
-public_folder: "assets/fotos"
+public_folder: "/assets/fotos"
 
 collections:
   - name: "portfolio"
     label: "Portfólio de Obras"
     files:
-      - label: "Trabalhos Realizados"
-        name: "projetos"
-        file: "portfolio.json"
+      - file: "portfolio.json"
+        label: "Projetos Publicados"
+        name: "items"
         fields:
-          - label: "Projetos"
-            name: "items"
+          - name: "items"
+            label: "Lista de Obras"
             widget: "list"
+            summary: "{{fields.titulo}} ({{fields.categoria}})"
             fields:
-              - { label: "Título do Projeto", name: "titulo", widget: "string" }
+              - { label: "Título da Obra", name: "titulo", widget: "string" }
               - label: "Categoria"
                 name: "categoria"
                 widget: "select"
-                options: ["Cozinhas", "Quartos & Closets", "Salas de Estar", "Casas de Banho", "Espaços Comerciais", "Mobiliário Avulso"]
-                default: "Cozinhas"
-              - { label: "Localização (ex: Matosinhos)", name: "local", widget: "string", required: false }
-              - { label: "Fotografia da Obra", name: "foto", widget: "image" }
-              - { label: "Descrição dos Materiais / Detalhes", name: "descricao", widget: "text", required: false }
+                options: ["Cozinhas", "Roupeiros e Closets", "Sala", "Casa de Banho", "Comercial", "Outros"]
+              - { label: "Localidade", name: "local", widget: "string", required: false }
+              - { label: "Descrição", name: "descricao", widget: "text", required: false }
+              - { label: "Fotografia Principal (Capa)", name: "foto", widget: "image" }
+              - label: "Galeria de Fotografias Extra"
+                name: "galeria"
+                widget: "list"
+                required: false
+                field: { label: "Fotografia", name: "imagem", widget: "image" }
