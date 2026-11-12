@@ -5,28 +5,154 @@
       "categoria": "Cozinhas",
       "local": "Porto",
       "foto": "/assets/fotos/03.jpg",
-      "descricao": "Cozinhas por medida, pensadas ao detalhe!\n\nCriamos espaços que aliam elegância, funcionalidade e qualidade. Cada projeto é desenvolvido à medida das suas necessidades, com materiais cuidadosamente selecionados, acabamentos modernos e soluções inteligentes para aproveitar cada espaço.\n\nNa MT Mobiliário, transformamos as suas ideias em ambientes únicos, onde o design e a funcionalidade se encontram.\n\nO seu espaço, o seu estilo, a nossa dedicação!"
+      "descricao": "Cozinhas por medida"
     },
     {
       "titulo": "Roupeiro",
       "categoria": "Quartos & Closets",
       "local": "Vila Nova de Gaia",
       "foto": "/assets/fotos/11.jpg",
-      "descricao": "Roupeiros por medida – Organização e elegância em cada detalhe!\n\nDesenvolvemos soluções personalizadas que aproveitam cada centímetro do espaço, combinando funcionalidade, design e acabamentos de qualidade. Roupeiros pensados à medida das suas necessidades, com linhas modernas e uma integração perfeita em qualquer ambiente.\n\nNa MT Mobiliário, criamos espaços de arrumação que fazem a diferença!"
+      "descricao": "Roupeiros por medida"
     },
     {
       "titulo": "Salas",
       "categoria": "Salas de Estar",
       "local": "Porto",
       "foto": "/assets/fotos/17.jpg",
-      "descricao": "Salas de estar à medida – Conforto, design e sofisticação!\n\nCriamos ambientes modernos e acolhedores, onde cada detalhe é pensado para valorizar o espaço. Desenvolvemos soluções personalizadas, como painéis de TV em madeira natural, ripados decorativos e iluminação LED indireta, combinando elegância e funcionalidade.\n\nNa MT Mobiliário, damos forma às suas ideias e criamos espaços com identidade própria!"
+      "descricao": "Salas de estar à medida"
     },
     {
       "titulo": "Cozinha",
       "categoria": "Cozinhas",
       "local": "Porto",
       "foto": "/assets/fotos/04.jpg",
-      "descricao": "Cozinhas por medida, pensadas ao detalhe!\n\nCriamos espaços que aliam elegância, funcionalidade e qualidade. Cada projeto é desenvolvido à medida das suas necessidades, com materiais cuidadosamente selecionados, acabamentos modernos e soluções inteligentes para aproveitar cada espaço.\n\nNa MT Mobiliário, transformamos as suas ideias em ambientes únicos, onde o design e a funcionalidade se encontram.\n\nO seu espaço, o seu estilo, a nossa dedicação!"
+      "descricao": "Cozinhas por medida"
+    },
+    {
+      "titulo": "Sala",
+      "categoria": "Salas de Estar",
+      "local": "Porto",
+      "foto": "/assets/fotos/18.jpg",
+      "descricao": "Salas à medida"
+    },
+    {
+      "titulo": "Cozinha",
+      "categoria": "Cozinhas",
+      "local": "Portugal",
+      "foto": "/assets/fotos/20.jpg",
+      "descricao": "Cozinhas por medida"
+    },
+    {
+      "titulo": "Cozinha",
+      "categoria": "Cozinhas",
+      "local": "Portugal",
+      "foto": "/assets/fotos/21.jpg",
+      "descricao": "Cozinha por medida"
+    },
+    {
+      "titulo": "Cozinha",
+      "categoria": "Cozinhas",
+      "local": "Portugal",
+      "foto": "/assets/fotos/22.jpg",
+      "descricao": "Cozinhas por medida"
+    },
+    {
+      "titulo": "Roupeiro",
+      "categoria": "Quartos & Closets",
+      "local": "Portugal",
+      "foto": "/assets/fotos/23.jpg",
+      "descricao": "Roupeiros à medida"
+    },
+    {
+      "titulo": "Mobília",
+      "categoria": "Mobiliário Avulso",
+      "local": "Portugal",
+      "foto": "/assets/fotos/24.jpg",
+      "descricao": "Mobília por medida"
+    },
+    {
+      "titulo": "Sala",
+      "categoria": "Salas de Estar",
+      "local": "Portugal",
+      "foto": "/assets/fotos/25.jpg",
+      "descricao": "Salas de estar por medida"
+    },
+    {
+      "titulo": "Escadas",
+      "categoria": "Mobiliário Avulso",
+      "local": "Portugal",
+      "foto": "/assets/fotos/26.jpg",
+      "descricao": "Escadas com leds (tudo feito a medida)"
+    },
+    {
+      "titulo": "Escadas e entrada",
+      "categoria": "Mobiliário Avulso",
+      "local": "Portugal",
+      "foto": "/assets/fotos/27.jpg",
+      "descricao": "Entrada com escada feito tudo a medida"
+    },
+    {
+      "titulo": "Cozinha",
+      "categoria": "Cozinhas",
+      "local": "Portugal",
+      "foto": "/assets/fotos/28.jpg",
+      "descricao": "Cozinha feita a medida"
+    },
+    {
+      "titulo": "Sala de estar",
+      "categoria": "Salas de Estar",
+      "local": "Portugal",
+      "foto": "/assets/fotos/29.jpg",
+      "descricao": "Sala de estar a medida"
+    },
+    {
+      "titulo": "Salas de estar",
+      "categoria": "Salas de Estar",
+      "local": "Portugal",
+      "foto": "/assets/fotos/30.jpg",
+      "descricao": "Salas de estar feitas a medida"
+    },
+    {
+      "titulo": "Cozinha",
+      "categoria": "Cozinhas",
+      "local": "Portugal",
+      "foto": "/assets/fotos/32.jpg",
+      "descricao": "Cozinha feita a medida"
+    },
+    {
+      "titulo": "Cozinha",
+      "categoria": "Cozinhas",
+      "local": "Portugal",
+      "foto": "/assets/fotos/33.jpg",
+      "descricao": "Cozinha feita a medida"
+    },
+    {
+      "titulo": "Lavandaria",
+      "categoria": "Espaços Comerciais",
+      "local": "Portugal",
+      "foto": "/assets/fotos/34.jpg",
+      "descricao": "Tudo feito a medida"
+    },
+    {
+      "titulo": "Casa de banho",
+      "categoria": "Casas de Banho",
+      "local": "Portugal",
+      "foto": "/assets/fotos/35.jpg",
+      "descricao": "Tudo feito a medida"
+    },
+    {
+      "titulo": "Casa de banho",
+      "categoria": "Casas de Banho",
+      "local": "Portugal",
+      "foto": "/assets/fotos/36.jpg",
+      "descricao": "Tudo feito a medida"
+    },
+    {
+      "titulo": "Roupeiro",
+      "categoria": "Quartos & Closets",
+      "local": "Portugal",
+      "foto": "/assets/fotos/37.jpg",
+      "descricao": "Roupeiro feito a medida com leds"
     }
   ]
 }
