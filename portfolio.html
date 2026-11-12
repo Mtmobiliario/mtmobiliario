@@ -92,7 +92,6 @@
 
     .btn-nav-orcamento:hover { background: #875128 !important; transform: translateY(-2px); }
 
-    /* Botão Menu Hamburguer (Telemóvel) */
     .menu-toggle {
       display: none;
       background: none;
@@ -135,8 +134,24 @@
       flex-direction: column;
     }
 
-    .card-img-wrap { width: 100%; height: 280px; position: relative; overflow: hidden; background: #E7E2DA; }
-    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .card-img-wrap { 
+      width: 100%; 
+      height: 280px; 
+      position: relative; 
+      overflow: hidden; 
+      background: #E7E2DA; 
+      cursor: pointer;
+    }
+    .card-img-wrap img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-img-wrap:hover img {
+      transform: scale(1.04);
+    }
+
     .card-badge {
       position: absolute;
       top: 16px;
@@ -149,6 +164,25 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       font-weight: 400;
+      z-index: 2;
+    }
+
+    .gallery-badge {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      background: rgba(28, 25, 23, 0.85);
+      color: #FAF8F5;
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 2;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.15);
     }
 
     .card-info { padding: 1.8rem; display: flex; flex-direction: column; flex-grow: 1; }
@@ -175,6 +209,110 @@
     }
 
     .btn-quote:hover { background: var(--wood-warm); color: white; }
+
+    /* Modal Galeria (Lightbox) */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 16, 15, 0.94);
+      z-index: 2000;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .lightbox-modal.open {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 30px;
+      background: none;
+      border: none;
+      color: #FAF8F5;
+      font-size: 2.4rem;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 2010;
+    }
+
+    .lightbox-stage {
+      position: relative;
+      max-width: 1050px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img {
+      max-height: 74vh;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 3px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .lightbox-nav:hover {
+      background: var(--wood-warm);
+    }
+
+    .lightbox-prev { left: 10px; }
+    .lightbox-next { right: 10px; }
+
+    .lightbox-caption {
+      color: #E7E5E4;
+      margin-top: 1.2rem;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .lightbox-thumbs {
+      display: flex;
+      gap: 10px;
+      margin-top: 1rem;
+      overflow-x: auto;
+      max-width: 90vw;
+      padding-bottom: 6px;
+    }
+
+    .lightbox-thumb {
+      width: 64px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 2px;
+      opacity: 0.5;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: opacity 0.2s, border-color 0.2s;
+    }
+
+    .lightbox-thumb.active {
+      opacity: 1;
+      border-color: var(--wood-soft);
+    }
 
     footer { background: var(--primary); color: #D6D3D1; padding: 4.5rem 2rem 2.5rem; }
     .footer-wrap { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; border-bottom: 1px solid #292524; padding-bottom: 3rem; }
@@ -214,7 +352,6 @@
       fill: currentColor;
     }
 
-    /* Responsividade e Menu Telemóvel */
     @media (max-width: 768px) {
       .menu-toggle { display: block; }
       .nav-links {
@@ -236,16 +373,8 @@
       }
       .nav-links.active { right: 0; }
       .footer-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
-      .whatsapp-float {
-        bottom: 18px;
-        right: 18px;
-        width: 52px;
-        height: 52px;
-      }
-      .whatsapp-float svg {
-        width: 27px;
-        height: 27px;
-      }
+      .whatsapp-float { bottom: 18px; right: 18px; width: 52px; height: 52px; }
+      .whatsapp-float svg { width: 27px; height: 27px; }
     }
   </style>
 </head>
@@ -258,7 +387,6 @@
         <span class="logo" style="font-size: 1.15rem; letter-spacing: 0.08em; color: var(--primary); text-transform: uppercase;">MT <span>MOBILIÁRIO</span></span>
       </a>
 
-      <!-- Botão Hamburguer para Telemóveis -->
       <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
         &#9776;
       </button>
@@ -287,6 +415,18 @@
       <p style="text-align: center; grid-column: 1 / -1; color: var(--muted);">A carregar portfólio...</p>
     </div>
   </section>
+
+  <!-- Modal Lightbox da Galeria -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Fechar Galeria">&times;</button>
+    <div class="lightbox-stage">
+      <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Anterior">&#10094;</button>
+      <img src="" alt="" class="lightbox-img" id="lightbox-img">
+      <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Seguinte">&#10095;</button>
+    </div>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+    <div class="lightbox-thumbs" id="lightbox-thumbs"></div>
+  </div>
 
   <footer>
     <div class="footer-wrap">
@@ -338,6 +478,26 @@
 
     const numeroWhatsApp = "351965596887";
     let todosOsProjetos = [];
+    let fotosGaleriaAtual = [];
+    let tituloGaleriaAtual = "";
+    let indiceFotoGaleria = 0;
+
+    function normalizarCaminho(url) {
+      if (!url) return 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80';
+      return url.startsWith('/') ? '.' + url : url;
+    }
+
+    function obterTodasFotosDoItem(item) {
+      const fotos = [];
+      if (item.foto) fotos.push(normalizarCaminho(item.foto));
+      if (Array.isArray(item.galeria)) {
+        item.galeria.forEach(entry => {
+          const imgPath = typeof entry === 'string' ? entry : entry.imagem;
+          if (imgPath) fotos.push(normalizarCaminho(imgPath));
+        });
+      }
+      return fotos.length > 0 ? fotos : [normalizarCaminho('')];
+    }
 
     fetch('./portfolio.json')
       .then(res => res.json())
@@ -388,18 +548,17 @@
 
       lista.forEach(item => {
         const mensagemWA = encodeURIComponent(`Olá! Vi no vosso portfólio o projeto "${item.titulo}" e pretendo informações.`);
-        
-        let fotoUrl = item.foto || 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80';
-        if (fotoUrl.startsWith('/')) {
-          fotoUrl = '.' + fotoUrl;
-        }
+        const fotosDoProjeto = obterTodasFotosDoItem(item);
+        const fotoCapa = fotosDoProjeto[0];
+        const totalFotos = fotosDoProjeto.length;
 
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-          <div class="card-img-wrap">
+          <div class="card-img-wrap" title="Clique para ampliar${totalFotos > 1 ? ' e ver galeria' : ''}">
             ${item.categoria ? `<span class="card-badge">${item.categoria}</span>` : ''}
-            <img src="${fotoUrl}" alt="${item.titulo}">
+            <img src="${fotoCapa}" alt="${item.titulo}">
+            ${totalFotos > 1 ? `<span class="gallery-badge">&#128247; ${totalFotos} fotos</span>` : ''}
           </div>
           <div class="card-info">
             ${item.local ? `<span class="card-place">📍 ${item.local}</span>` : ''}
@@ -410,9 +569,81 @@
             </a>
           </div>
         `;
+
+        card.querySelector('.card-img-wrap').onclick = () => {
+          abrirGaleria(fotosDoProjeto, item.titulo);
+        };
+
         container.appendChild(card);
       });
     }
+
+    // Lógica do Lightbox (Galeria)
+    const modal = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('lightbox-img');
+    const modalCaption = document.getElementById('lightbox-caption');
+    const modalThumbs = document.getElementById('lightbox-thumbs');
+    const btnPrev = document.getElementById('lightbox-prev');
+    const btnNext = document.getElementById('lightbox-next');
+
+    function abrirGaleria(fotos, titulo) {
+      fotosGaleriaAtual = fotos;
+      tituloGaleriaAtual = titulo;
+      indiceFotoGaleria = 0;
+      atualizarGaleria();
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function fecharGaleria() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function atualizarGaleria() {
+      modalImg.src = fotosGaleriaAtual[indiceFotoGaleria];
+      modalImg.alt = tituloGaleriaAtual;
+      modalCaption.textContent = `${tituloGaleriaAtual} (${indiceFotoGaleria + 1} de ${fotosGaleriaAtual.length})`;
+
+      const temVarias = fotosGaleriaAtual.length > 1;
+      btnPrev.style.display = temVarias ? 'flex' : 'none';
+      btnNext.style.display = temVarias ? 'flex' : 'none';
+
+      modalThumbs.innerHTML = '';
+      if (temVarias) {
+        fotosGaleriaAtual.forEach((src, idx) => {
+          const thumb = document.createElement('img');
+          thumb.src = src;
+          thumb.className = `lightbox-thumb ${idx === indiceFotoGaleria ? 'active' : ''}`;
+          thumb.onclick = () => {
+            indiceFotoGaleria = idx;
+            atualizarGaleria();
+          };
+          modalThumbs.appendChild(thumb);
+        });
+      }
+    }
+
+    document.getElementById('lightbox-close').onclick = fecharGaleria;
+    btnPrev.onclick = () => {
+      indiceFotoGaleria = (indiceFotoGaleria - 1 + fotosGaleriaAtual.length) % fotosGaleriaAtual.length;
+      atualizarGaleria();
+    };
+    btnNext.onclick = () => {
+      indiceFotoGaleria = (indiceFotoGaleria + 1) % fotosGaleriaAtual.length;
+      atualizarGaleria();
+    };
+
+    modal.onclick = (e) => {
+      if (e.target === modal) fecharGaleria();
+    };
+
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('open')) return;
+      if (e.key === 'Escape') fecharGaleria();
+      if (e.key === 'ArrowLeft') btnPrev.click();
+      if (e.key === 'ArrowRight') btnNext.click();
+    });
   </script>
 </body>
 </html>
